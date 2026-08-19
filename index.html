@@ -1,289 +1,564 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mon Impasse | Hecho a mano</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<title>Mon Impasse | Hecho a mano</title>
 
-    body {
-      font-family: Arial, sans-serif;
-      color: #3f3a38;
-      background: #faf8f5;
-      line-height: 1.6;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
-    header {
-      background: #fff;
-      padding: 22px 20px;
-      text-align: center;
-      border-bottom: 1px solid #eee6df;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    .logo {
-      font-family: Georgia, serif;
-      font-size: 32px;
-      letter-spacing: 3px;
-      color: #4d4642;
-    }
+body{
+  font-family:Arial, sans-serif;
+  color:#3f3a38;
+  background:#faf8f5;
+  line-height:1.6;
+}
 
-    .subtitle {
-      font-size: 12px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #9a8980;
-      margin-top: 4px;
-    }
+header{
+  background:#fff;
+  padding:22px 20px;
+  text-align:center;
+  border-bottom:1px solid #eee6df;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
 
-    nav {
-      margin-top: 15px;
-    }
+.logo{
+  font-family:Georgia, serif;
+  font-size:32px;
+  letter-spacing:2px;
+  color:#514943;
+}
 
-    nav a {
-      color: #5b514c;
-      text-decoration: none;
-      margin: 0 10px;
-      font-size: 14px;
-    }
+.tagline{
+  font-size:13px;
+  letter-spacing:2px;
+  color:#8d8179;
+  margin-top:3px;
+}
 
-    .hero {
-      min-height: 520px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 25px;
-      background: #eee5df;
-    }
+nav{
+  margin-top:15px;
+}
 
-    .hero-content {
-      max-width: 650px;
-    }
+nav a{
+  color:#514943;
+  text-decoration:none;
+  margin:0 9px;
+  font-size:14px;
+}
 
-    .hero h1 {
-      font-family: Georgia, serif;
-      font-size: 48px;
-      font-weight: normal;
-      margin-bottom: 20px;
-      color: #403936;
-    }
+nav a:hover{
+  color:#b48f82;
+}
 
-    .hero p {
-      font-size: 18px;
-      margin-bottom: 30px;
-      color: #665b55;
-    }
+.hero{
+  min-height:78vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:70px 25px;
+  background:
+    linear-gradient(rgba(250,248,245,.82),rgba(250,248,245,.92)),
+    radial-gradient(circle at top right,#eadbd4,transparent 40%);
+}
 
-    .button {
-      display: inline-block;
-      padding: 13px 30px;
-      background: #5c514b;
-      color: white;
-      text-decoration: none;
-      border-radius: 3px;
-      font-size: 14px;
-      letter-spacing: 1px;
-    }
+.hero-content{
+  max-width:750px;
+}
 
-    section {
-      padding: 65px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+.hero h1{
+  font-family:Georgia,serif;
+  font-size:clamp(42px,8vw,76px);
+  font-weight:normal;
+  color:#514943;
+  margin-bottom:18px;
+}
 
-    .section-title {
-      text-align: center;
-      font-family: Georgia, serif;
-      font-size: 34px;
-      font-weight: normal;
-      margin-bottom: 40px;
-    }
+.hero p{
+  font-size:18px;
+  color:#756a64;
+  margin-bottom:30px;
+}
 
-    .intro {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
-      color: #6c625d;
-    }
+.button{
+  display:inline-block;
+  background:#514943;
+  color:white;
+  text-decoration:none;
+  padding:13px 27px;
+  border-radius:30px;
+  font-size:14px;
+  transition:.2s;
+}
 
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 25px;
-    }
+.button:hover{
+  background:#8d7468;
+  transform:translateY(-2px);
+}
 
-    .product {
-      background: white;
-      border: 1px solid #eee7e1;
-      text-align: center;
-      padding-bottom: 25px;
-    }
+section{
+  padding:75px 20px;
+}
 
-    .product-image {
-      height: 280px;
-      background: #eee8e3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #9a8d84;
-      font-size: 14px;
-    }
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
 
-    .product h3 {
-      font-family: Georgia, serif;
-      font-size: 21px;
-      font-weight: normal;
-      margin: 20px 10px 5px;
-    }
+.section-title h2{
+  font-family:Georgia,serif;
+  font-size:36px;
+  font-weight:normal;
+  color:#514943;
+}
 
-    .product p {
-      color: #8a7d75;
-      font-size: 14px;
-    }
+.section-title p{
+  color:#8d8179;
+  margin-top:8px;
+}
 
-    .about {
-      background: #f1ebe6;
-      max-width: none;
-      text-align: center;
-    }
+.products{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
+}
 
-    .about-content {
-      max-width: 700px;
-      margin: auto;
-    }
+.product{
+  background:white;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(70,55,45,.07);
+}
 
-    footer {
-      background: #403936;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
+.product-image{
+  height:260px;
+  background:#eee7e1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#9a8e87;
+  font-size:14px;
+  text-align:center;
+  padding:20px;
+}
 
-    footer p {
-      font-size: 13px;
-      opacity: .8;
-      margin-top: 10px;
-    }
+.product-info{
+  padding:20px;
+}
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 38px;
-      }
+.product h3{
+  font-family:Georgia,serif;
+  font-size:22px;
+  font-weight:normal;
+  margin-bottom:7px;
+}
 
-      nav a {
-        margin: 0 5px;
-        font-size: 12px;
-      }
-    }
-  </style>
+.product p{
+  font-size:14px;
+  color:#776d67;
+}
+
+.about{
+  background:#fff;
+}
+
+.about-content{
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
+
+.about-content h2{
+  font-family:Georgia,serif;
+  font-size:36px;
+  font-weight:normal;
+  margin-bottom:20px;
+}
+
+.about-content p{
+  color:#706660;
+  font-size:17px;
+  margin-bottom:15px;
+}
+
+.values{
+  max-width:1000px;
+  margin:45px auto 0;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:25px;
+}
+
+.value{
+  text-align:center;
+  padding:25px;
+}
+
+.value span{
+  font-size:32px;
+  display:block;
+  margin-bottom:10px;
+}
+
+.value h3{
+  font-family:Georgia,serif;
+  font-weight:normal;
+  font-size:21px;
+  margin-bottom:7px;
+}
+
+.value p{
+  font-size:14px;
+  color:#776d67;
+}
+
+.custom{
+  text-align:center;
+  background:#eee5df;
+}
+
+.custom-content{
+  max-width:700px;
+  margin:auto;
+}
+
+.custom h2{
+  font-family:Georgia,serif;
+  font-size:36px;
+  font-weight:normal;
+  margin-bottom:18px;
+}
+
+.custom p{
+  margin-bottom:25px;
+  color:#6f645e;
+}
+
+.instagram{
+  text-align:center;
+}
+
+.instagram-box{
+  max-width:650px;
+  margin:auto;
+  background:white;
+  padding:40px 25px;
+  border-radius:20px;
+  box-shadow:0 5px 20px rgba(70,55,45,.06);
+}
+
+.instagram-box h2{
+  font-family:Georgia,serif;
+  font-size:32px;
+  font-weight:normal;
+  margin-bottom:10px;
+}
+
+.instagram-box p{
+  color:#776d67;
+  margin-bottom:22px;
+}
+
+.instagram-name{
+  font-size:20px;
+  color:#514943;
+  margin-bottom:22px;
+}
+
+footer{
+  background:#514943;
+  color:#fff;
+  text-align:center;
+  padding:35px 20px;
+}
+
+footer .footer-logo{
+  font-family:Georgia,serif;
+  font-size:27px;
+  margin-bottom:8px;
+}
+
+footer p{
+  font-size:13px;
+  color:#ddd4cf;
+}
+
+@media(max-width:600px){
+
+  header{
+    padding:17px 12px;
+  }
+
+  .logo{
+    font-size:27px;
+  }
+
+  nav a{
+    font-size:12px;
+    margin:0 5px;
+  }
+
+  .hero{
+    min-height:70vh;
+    padding:55px 20px;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  section{
+    padding:60px 18px;
+  }
+
+  .section-title h2,
+  .about-content h2,
+  .custom h2{
+    font-size:31px;
+  }
+
+  .product-image{
+    height:230px;
+  }
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <div class="logo">Mon Impasse</div>
-  <div class="subtitle">Hecho a mano con cariño</div>
+  <div class="tagline">HECHO A MANO · CON CARIÑO</div>
 
   <nav>
     <a href="#inicio">Inicio</a>
-    <a href="#coleccion">Colección</a>
-    <a href="#nosotros">Sobre mí</a>
+    <a href="#productos">Productos</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#personalizados">Personalizados</a>
     <a href="#contacto">Contacto</a>
   </nav>
 </header>
 
+
 <section class="hero" id="inicio">
   <div class="hero-content">
-    <h1>Pequeñas cosas hechas con mucho amor</h1>
+
+    <h1>Mon Impasse</h1>
+
     <p>
-      Creaciones artesanales y personalizadas para acompañarte
-      en los momentos más bonitos.
+      Pequeñas cosas hechas a mano para hacer
+      cada día un poquito más especial.
     </p>
-    <a class="button" href="#coleccion">VER COLECCIÓN</a>
+
+    <a class="button" href="#productos">
+      Descubrir la colección
+    </a>
+
   </div>
 </section>
 
-<section>
-  <h2 class="section-title">Bienvenidos a Mon Impasse</h2>
-  <p class="intro">
-    Un pequeño rincón donde cada pieza se confecciona a mano,
-    cuidando cada detalle y pensando en hacerla especial para ti.
-  </p>
-</section>
 
-<section id="coleccion">
-  <h2 class="section-title">Nuestra colección</h2>
+<section id="productos">
+
+  <div class="section-title">
+    <h2>Hecho para ti</h2>
+    <p>Piezas artesanales pensadas para acompañarte.</p>
+  </div>
 
   <div class="products">
 
-    <div class="product">
-      <div class="product-image">Aquí irá tu foto</div>
-      <h3>Bolsas</h3>
-      <p>Prácticas, bonitas y personalizadas</p>
-    </div>
+    <article class="product">
+      <div class="product-image">
+        Aquí irá la foto de tus bolsos
+      </div>
 
-    <div class="product">
-      <div class="product-image">Aquí irá tu foto</div>
-      <h3>Para los peques</h3>
-      <p>Detalles hechos especialmente para ellos</p>
-    </div>
+      <div class="product-info">
+        <h3>Bolsos</h3>
+        <p>
+          Diseños prácticos y especiales,
+          confeccionados a mano.
+        </p>
+      </div>
+    </article>
 
-    <div class="product">
-      <div class="product-image">Aquí irá tu foto</div>
-      <h3>Complementos</h3>
-      <p>Pequeñas piezas para el día a día</p>
-    </div>
 
-    <div class="product">
-      <div class="product-image">Aquí irá tu foto</div>
-      <h3>Personalizados</h3>
-      <p>Porque cada persona es única</p>
-    </div>
+    <article class="product">
+      <div class="product-image">
+        Aquí irá la foto de tus packs
+      </div>
+
+      <div class="product-info">
+        <h3>Packs bebé</h3>
+        <p>
+          Detalles bonitos y funcionales
+          para los más pequeños.
+        </p>
+      </div>
+    </article>
+
+
+    <article class="product">
+      <div class="product-image">
+        Aquí irá la foto de tus mochilas
+      </div>
+
+      <div class="product-info">
+        <h3>Mochilas</h3>
+        <p>
+          Diseños únicos para acompañar
+          cada aventura.
+        </p>
+      </div>
+    </article>
+
+
+    <article class="product">
+      <div class="product-image">
+        Aquí irá la foto de tus personalizados
+      </div>
+
+      <div class="product-info">
+        <h3>Personalizados</h3>
+        <p>
+          Elige tejidos, colores y detalles
+          para crear una pieza única.
+        </p>
+      </div>
+    </article>
 
   </div>
 </section>
+
 
 <section class="about" id="nosotros">
+
   <div class="about-content">
-    <h2 class="section-title">Detrás de Mon Impasse</h2>
+
+    <h2>Detrás de Mon Impasse</h2>
+
     <p>
-      Mon Impasse nace del amor por la costura, las telas bonitas
-      y esas pequeñas cosas que hacen que un objeto cotidiano
-      se convierta en algo especial.
+      Mon Impasse nace de la pasión por crear con las manos,
+      elegir cada tejido y cuidar cada pequeño detalle.
     </p>
-    <br>
+
     <p>
-      Cada pieza está hecha a mano, con mimo y cuidando cada detalle.
+      Cada pieza se confecciona artesanalmente,
+      pensando en que sea bonita, práctica y especial.
     </p>
+
+    <div class="values">
+
+      <div class="value">
+        <span>♡</span>
+        <h3>Hecho a mano</h3>
+        <p>Cada pieza está confeccionada con mimo.</p>
+      </div>
+
+      <div class="value">
+        <span>✦</span>
+        <h3>Único</h3>
+        <p>Diseños y combinaciones para hacerlos tuyos.</p>
+      </div>
+
+      <div class="value">
+        <span>⌁</span>
+        <h3>Con cariño</h3>
+        <p>Porque los pequeños detalles importan.</p>
+      </div>
+
+    </div>
+
   </div>
+
 </section>
 
-<section id="contacto">
-  <h2 class="section-title">¿Hablamos?</h2>
-  <p class="intro">
-    Si quieres hacer un pedido personalizado o tienes alguna pregunta,
-    estaremos encantados de ayudarte.
-  </p>
-  <br>
-  <div style="text-align:center;">
-    <a class="button" href="https://www.instagram.com/mon.impasse/" target="_blank">
-      INSTAGRAM
+
+<section class="custom" id="personalizados">
+
+  <div class="custom-content">
+
+    <h2>¿Lo quieres personalizado?</h2>
+
+    <p>
+      Podemos crear tu pieza eligiendo tejidos,
+      colores, estampados y nombre bordado.
+    </p>
+
+    <a
+      class="button"
+      href="https://www.instagram.com/mon.impasse/"
+      target="_blank"
+    >
+      Escríbeme por Instagram
     </a>
+
   </div>
+
 </section>
+
+
+<section class="instagram" id="contacto">
+
+  <div class="section-title">
+    <h2>Nos vemos en Instagram</h2>
+    <p>Descubre novedades, tejidos y nuevas creaciones.</p>
+  </div>
+
+  <div class="instagram-box">
+
+    <h2>Mon Impasse</h2>
+
+    <div class="instagram-name">
+      @mon.impasse
+    </div>
+
+    <p>
+      Síguenos para descubrir las nuevas piezas
+      y todos los proyectos que vamos creando.
+    </p>
+
+    <a
+      class="button"
+      href="https://www.instagram.com/mon.impasse/"
+      target="_blank"
+    >
+      Instagram
+    </a>
+
+  </div>
+
+</section>
+
 
 <footer>
-  <strong>Mon Impasse</strong>
-  <p>Hecho a mano con cariño · Madrid</p>
+
+  <div class="footer-logo">
+    Mon Impasse
+  </div>
+
+  <p>
+    Hecho a mano con cariño · © 2026 Mon Impasse
+  </p>
+
 </footer>
 
 </body>
