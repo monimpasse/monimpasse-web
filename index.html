@@ -6,351 +6,201 @@
 <title>Mon Impasse | Hecho a mano</title>
 
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;color:#514943;background:#faf8f5;line-height:1.6}
 
-html{
-  scroll-behavior:smooth;
-}
+header{background:#fff;padding:22px 20px;text-align:center;border-bottom:1px solid #eee6df;position:sticky;top:0;z-index:10}
+.logo{font-family:Georgia,serif;font-size:32px;letter-spacing:2px;color:#514943}
+.tagline{font-size:13px;letter-spacing:2px;color:#9a857a;margin-top:3px}
 
-body{
-  font-family:Arial,sans-serif;
-  color:#514943;
-  background:#faf8f5;
-  line-height:1.6;
-}
-
-header{
-  background:#fff;
-  padding:22px 20px;
-  text-align:center;
-  border-bottom:1px solid #eee6df;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-.logo{
-  font-family:Georgia,serif;
-  font-size:32px;
-  letter-spacing:2px;
-  color:#514943;
-}
-
-.tagline{
-  font-size:13px;
-  letter-spacing:2px;
-  color:#9a857a;
-  margin-top:3px;
-}
-
-nav{
-  margin-top:15px;
-}
-
-nav a{
-  color:#514943;
-  text-decoration:none;
-  margin:0 9px;
-  font-size:14px;
-}
+nav{margin-top:15px}
+nav a{color:#514943;text-decoration:none;margin:0 9px;font-size:14px}
 
 .hero{
-  min-height:78vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:70px 25px;
-  background:
-    linear-gradient(rgba(250,248,245,.82),rgba(250,248,245,.92)),
-    radial-gradient(circle at top right,#eadbd4,transparent 40%);
+min-height:78vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:70px 25px;
+background:
+linear-gradient(rgba(250,248,245,.82),rgba(250,248,245,.92)),
+radial-gradient(circle at top right,#eadbd4,transparent 40%);
 }
 
-.hero-content{
-  max-width:750px;
-}
-
-.hero h1{
-  font-family:Georgia,serif;
-  font-size:clamp(42px,8vw,76px);
-  font-weight:normal;
-  margin-bottom:18px;
-}
-
-.hero p{
-  font-size:18px;
-  color:#756a64;
-  margin-bottom:30px;
-}
+.hero-content{max-width:750px}
+.hero h1{font-family:Georgia,serif;font-size:clamp(42px,8vw,76px);font-weight:normal;margin-bottom:18px}
+.hero p{font-size:18px;color:#756a64;margin-bottom:30px}
 
 .button{
-  display:inline-block;
-  background:#514943;
-  color:white;
-  text-decoration:none;
-  padding:13px 27px;
-  border-radius:30px;
-  font-size:14px;
+display:inline-block;
+background:#514943;
+color:white;
+text-decoration:none;
+padding:13px 27px;
+border-radius:30px;
+font-size:14px
 }
 
-section{
-  padding:75px 20px;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:45px;
-}
-
-.section-title h2{
-  font-family:Georgia,serif;
-  font-size:36px;
-  font-weight:normal;
-}
-
-.section-title p{
-  color:#8d8179;
-  margin-top:8px;
-}
+section{padding:75px 20px}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title h2{font-family:Georgia,serif;font-size:36px;font-weight:normal}
+.section-title p{color:#8d8179;margin-top:8px}
 
 .products{
-  max-width:1100px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:25px;
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px
 }
 
 .product{
-  background:white;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 5px 20px rgba(70,55,45,.07);
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(70,55,45,.07)
 }
 
 .product-image{
-  width:100%;
-  height:280px;
-  object-fit:cover;
-  display:block;
+width:100%;
+height:280px;
+object-fit:cover;
+display:block
 }
 
-.product-info{
-  padding:20px;
-}
+.product-info{padding:20px}
 
 .product h3{
-  font-family:Georgia,serif;
-  font-size:22px;
-  font-weight:normal;
-  margin-bottom:7px;
+font-family:Georgia,serif;
+font-size:22px;
+font-weight:normal;
+margin-bottom:7px
 }
 
 .product p{
-  font-size:14px;
-  color:#776d67;
-  margin-bottom:12px;
+font-size:14px;
+color:#776d67;
+margin-bottom:12px
 }
 
 .price{
-  font-family:Georgia,serif;
-  font-size:22px;
-  margin:8px 0 14px;
+font-family:Georgia,serif;
+font-size:22px;
+margin:8px 0 14px
 }
 
 .options{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
+display:flex;
+flex-wrap:wrap;
+gap:7px
 }
 
 .option{
-  font-size:12px;
-  color:#8d7468;
-  background:#f4ede8;
-  padding:6px 10px;
-  border-radius:20px;
+font-size:12px;
+color:#8d7468;
+background:#f4ede8;
+padding:6px 10px;
+border-radius:20px
 }
 
 .custom-note{
-  font-size:13px;
-  color:#8d8179;
-  margin-top:12px;
+font-size:13px;
+color:#8d8179;
+margin-top:12px
 }
 
-.about{
-  background:#fff;
-}
-
-.about-content{
-  max-width:900px;
-  margin:auto;
-  text-align:center;
-}
+.about{background:#fff}
+.about-content{max-width:900px;margin:auto;text-align:center}
 
 .about-content h2{
-  font-family:Georgia,serif;
-  font-size:36px;
-  font-weight:normal;
-  margin-bottom:20px;
+font-family:Georgia,serif;
+font-size:36px;
+font-weight:normal;
+margin-bottom:20px
 }
 
 .about-content p{
-  color:#706660;
-  font-size:17px;
-  margin-bottom:15px;
+color:#706660;
+font-size:17px;
+margin-bottom:15px
 }
 
 .values{
-  max-width:1000px;
-  margin:45px auto 0;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:25px;
+max-width:1000px;
+margin:45px auto 0;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px
 }
 
-.value{
-  text-align:center;
-  padding:25px;
-}
+.value{text-align:center;padding:25px}
+.value span{font-size:32px;display:block;margin-bottom:10px}
+.value h3{font-family:Georgia,serif;font-weight:normal;font-size:21px;margin-bottom:7px}
+.value p{font-size:14px;color:#776d67}
 
-.value span{
-  font-size:32px;
-  display:block;
-  margin-bottom:10px;
-}
-
-.value h3{
-  font-family:Georgia,serif;
-  font-weight:normal;
-  font-size:21px;
-  margin-bottom:7px;
-}
-
-.value p{
-  font-size:14px;
-  color:#776d67;
-}
-
-.custom{
-  text-align:center;
-  background:#eee5df;
-}
-
-.custom-content{
-  max-width:700px;
-  margin:auto;
-}
+.custom{text-align:center;background:#eee5df}
+.custom-content{max-width:700px;margin:auto}
 
 .custom h2{
-  font-family:Georgia,serif;
-  font-size:36px;
-  font-weight:normal;
-  margin-bottom:18px;
+font-family:Georgia,serif;
+font-size:36px;
+font-weight:normal;
+margin-bottom:18px
 }
 
-.custom p{
-  margin-bottom:25px;
-  color:#6f645e;
-}
+.custom p{margin-bottom:25px;color:#6f645e}
 
-.instagram{
-  text-align:center;
-}
+.instagram{text-align:center}
 
 .instagram-box{
-  max-width:650px;
-  margin:auto;
-  background:white;
-  padding:40px 25px;
-  border-radius:20px;
-  box-shadow:0 5px 20px rgba(70,55,45,.06);
+max-width:650px;
+margin:auto;
+background:white;
+padding:40px 25px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(70,55,45,.06)
 }
 
 .instagram-box h2{
-  font-family:Georgia,serif;
-  font-size:32px;
-  font-weight:normal;
-  margin-bottom:10px;
+font-family:Georgia,serif;
+font-size:32px;
+font-weight:normal;
+margin-bottom:10px
 }
 
-.instagram-box p{
-  color:#776d67;
-  margin-bottom:22px;
-}
-
-.instagram-name{
-  font-size:20px;
-  margin-bottom:22px;
-}
+.instagram-box p{color:#776d67;margin-bottom:22px}
+.instagram-name{font-size:20px;margin-bottom:22px}
 
 footer{
-  background:#514943;
-  color:#fff;
-  text-align:center;
-  padding:35px 20px;
+background:#514943;
+color:#fff;
+text-align:center;
+padding:35px 20px
 }
 
 footer .footer-logo{
-  font-family:Georgia,serif;
-  font-size:27px;
-  margin-bottom:8px;
+font-family:Georgia,serif;
+font-size:27px;
+margin-bottom:8px
 }
 
-footer p{
-  font-size:13px;
-  color:#ddd4cf;
-}
+footer p{font-size:13px;color:#ddd4cf}
 
 @media(max-width:600px){
-
-  header{
-    padding:17px 12px;
-  }
-
-  .logo{
-    font-size:27px;
-  }
-
-  nav a{
-    font-size:12px;
-    margin:0 5px;
-  }
-
-  .hero{
-    min-height:70vh;
-    padding:55px 20px;
-  }
-
-  .hero h1{
-    font-size:48px;
-  }
-
-  .hero p{
-    font-size:16px;
-  }
-
-  section{
-    padding:60px 18px;
-  }
-
-  .section-title h2,
-  .about-content h2,
-  .custom h2{
-    font-size:31px;
-  }
-
-  .product-image{
-    height:260px;
-  }
-
-  .products{
-    grid-template-columns:1fr;
-  }
+header{padding:17px 12px}
+.logo{font-size:27px}
+nav a{font-size:12px;margin:0 5px}
+.hero{min-height:70vh;padding:55px 20px}
+.hero h1{font-size:48px}
+.hero p{font-size:16px}
+section{padding:60px 18px}
+.section-title h2,
+.about-content h2,
+.custom h2{font-size:31px}
+.product-image{height:260px}
+.products{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -358,12 +208,8 @@ footer p{
 <body>
 
 <header>
-
 <div class="logo">Mon Impasse</div>
-
-<div class="tagline">
-HECHO A MANO · CON CARIÑO
-</div>
+<div class="tagline">HECHO A MANO · CON CARIÑO</div>
 
 <nav>
 <a href="#inicio">Inicio</a>
@@ -372,14 +218,10 @@ HECHO A MANO · CON CARIÑO
 <a href="#personalizados">Personalizados</a>
 <a href="#contacto">Contacto</a>
 </nav>
-
 </header>
 
-
 <section class="hero" id="inicio">
-
 <div class="hero-content">
-
 <h1>Mon Impasse</h1>
 
 <p>
@@ -390,109 +232,72 @@ cada día un poquito más especial.
 <a class="button" href="#productos">
 Descubrir la colección
 </a>
-
 </div>
-
 </section>
-
 
 <section id="productos">
 
 <div class="section-title">
-
 <h2>Hecho para ti</h2>
-
-<p>
-Piezas artesanales pensadas para acompañarte.
-</p>
-
+<p>Piezas artesanales pensadas para acompañarte.</p>
 </div>
-
 
 <div class="products">
 
-
-<!-- BOLSO -->
-
+<!-- TOTEBAG -->
 <article class="product">
 
 <img
 class="product-image"
 src="IMG_8310.jpeg"
-alt="Bolso tote Mon Impasse"
+alt="Totebag sencillo Mon Impasse"
 >
 
 <div class="product-info">
 
-<h3>Bolso tote sencillo</h3>
+<h3>Totebag sencillo</h3>
 
 <p>
 Un bolso práctico y especial,
 confeccionado a mano.
 </p>
 
-<div class="price">
-25 €
-</div>
+<div class="price">25 €</div>
 
 <div class="options">
-
-<span class="option">
-Elige tu tela
-</span>
-
-<span class="option">
-Nombre +5 €
-</span>
-
-<span class="option">
-Inicial +3 €
-</span>
-
+<span class="option">Elige tu tela</span>
+<span class="option">Nombre +5 €</span>
+<span class="option">Inicial +3 €</span>
 </div>
 
 </div>
-
 </article>
 
 
-<!-- NECESER GRANDE -->
-
+<!-- NECESER XL -->
 <article class="product">
 
 <img
 class="product-image"
-src="23D60334-06E7-487A-9B65-81E7311500AF.png"
-alt="Neceser grande Mon Impasse"
+src="Photoroom_20250611_131104.jpeg"
+alt="Neceser XL Mon Impasse"
 >
 
 <div class="product-info">
 
-<h3>Neceser grande</h3>
+<h3>Neceser XL</h3>
 
 <p>
 Espacioso y bonito para llevar
 todo lo que necesitas.
 </p>
 
-<div class="price">
-25 €
-</div>
+<div class="price">25 €</div>
 
 <div class="options">
-
-<span class="option">
-Elige tu tela
-</span>
-
-<span class="option">
-Nombre +5 €
-</span>
-
-<span class="option">
-Inicial +3 €
-</span>
-
+<span class="option">Elige tu tela</span>
+<span class="option">Nombre +5 €</span>
+<span class="option">Inicial +3 €</span>
 </div>
 
 <div class="custom-note">
@@ -500,61 +305,45 @@ La impermeabilidad depende de la tela elegida.
 </div>
 
 </div>
-
 </article>
 
 
 <!-- NECESER BASIC -->
-
 <article class="product">
 
 <img
 class="product-image"
-src="3C5AFE69-450A-43BD-88A5-C5CD9377024E.png"
-alt="Neceser basic Mon Impasse"
+src="Photoroom_20250623_161929.jpeg"
+alt="Neceser Basic Mon Impasse"
 >
 
 <div class="product-info">
 
-<h3>Neceser basic</h3>
+<h3>Neceser Basic</h3>
 
 <p>
 Un diseño sencillo, práctico
 y hecho a mano.
 </p>
 
-<div class="price">
-20 €
-</div>
+<div class="price">20 €</div>
 
 <div class="options">
-
-<span class="option">
-Elige tu tela
-</span>
-
-<span class="option">
-Nombre +5 €
-</span>
-
-<span class="option">
-Inicial +3 €
-</span>
-
+<span class="option">Elige tu tela</span>
+<span class="option">Nombre +5 €</span>
+<span class="option">Inicial +3 €</span>
 </div>
 
 </div>
-
 </article>
 
 
 <!-- BABERO -->
-
 <article class="product">
 
 <img
 class="product-image"
-src="Photoroom_20250623_161929.jpeg"
+src="3C5AFE69-450A-43BD-88A5-C5CD9377024E.png"
 alt="Babero Mon Impasse"
 >
 
@@ -567,38 +356,24 @@ Un detalle bonito y funcional
 para los más pequeños.
 </p>
 
-<div class="price">
-10 €
-</div>
+<div class="price">10 €</div>
 
 <div class="options">
-
-<span class="option">
-Elige tu tela
-</span>
-
-<span class="option">
-Nombre +5 €
-</span>
-
-<span class="option">
-Inicial +3 €
-</span>
-
+<span class="option">Elige tu tela</span>
+<span class="option">Nombre +5 €</span>
+<span class="option">Inicial +3 €</span>
 </div>
 
 </div>
-
 </article>
 
 
 <!-- PACK BEBÉ -->
-
 <article class="product">
 
 <img
 class="product-image"
-src="Photoroom_20250611_131104.jpeg"
+src="23D60334-06E7-487A-9B65-81E7311500AF.png"
 alt="Pack bebé Mon Impasse"
 >
 
@@ -611,33 +386,18 @@ Un pack especial y práctico
 para los más pequeños.
 </p>
 
-<div class="price">
-50 €
-</div>
+<div class="price">50 €</div>
 
 <div class="options">
-
-<span class="option">
-Elige tu tela
-</span>
-
-<span class="option">
-Nombre +5 €
-</span>
-
-<span class="option">
-Inicial +3 €
-</span>
-
+<span class="option">Elige tu tela</span>
+<span class="option">Nombre +5 €</span>
+<span class="option">Inicial +3 €</span>
 </div>
 
 </div>
-
 </article>
 
-
 </div>
-
 </section>
 
 
@@ -645,9 +405,7 @@ Inicial +3 €
 
 <div class="about-content">
 
-<h2>
-Detrás de Mon Impasse
-</h2>
+<h2>Detrás de Mon Impasse</h2>
 
 <p>
 Mon Impasse nace de la pasión por crear con las manos,
@@ -659,57 +417,28 @@ Cada pieza se confecciona artesanalmente,
 pensando en que sea bonita, práctica y especial.
 </p>
 
-
 <div class="values">
 
 <div class="value">
-
 <span>♡</span>
-
-<h3>
-Hecho a mano
-</h3>
-
-<p>
-Cada pieza está confeccionada con mimo.
-</p>
-
+<h3>Hecho a mano</h3>
+<p>Cada pieza está confeccionada con mimo.</p>
 </div>
 
-
 <div class="value">
-
 <span>✦</span>
-
-<h3>
-Único
-</h3>
-
-<p>
-Diseños y combinaciones para hacerlos tuyos.
-</p>
-
+<h3>Único</h3>
+<p>Diseños y combinaciones para hacerlos tuyos.</p>
 </div>
-
 
 <div class="value">
-
 <span>⌁</span>
-
-<h3>
-Con cariño
-</h3>
-
-<p>
-Porque los pequeños detalles importan.
-</p>
-
+<h3>Con cariño</h3>
+<p>Porque los pequeños detalles importan.</p>
 </div>
 
 </div>
-
 </div>
-
 </section>
 
 
@@ -717,9 +446,7 @@ Porque los pequeños detalles importan.
 
 <div class="custom-content">
 
-<h2>
-¿Lo quieres personalizado?
-</h2>
+<h2>¿Lo quieres personalizado?</h2>
 
 <p>
 Todos nuestros productos pueden confeccionarse
@@ -736,7 +463,6 @@ Escríbeme por Instagram
 </a>
 
 </div>
-
 </section>
 
 
@@ -744,9 +470,7 @@ Escríbeme por Instagram
 
 <div class="section-title">
 
-<h2>
-Nos vemos en Instagram
-</h2>
+<h2>Nos vemos en Instagram</h2>
 
 <p>
 Descubre novedades, tejidos y nuevas creaciones.
@@ -754,12 +478,9 @@ Descubre novedades, tejidos y nuevas creaciones.
 
 </div>
 
-
 <div class="instagram-box">
 
-<h2>
-Mon Impasse
-</h2>
+<h2>Mon Impasse</h2>
 
 <div class="instagram-name">
 @mon.impasse
@@ -779,7 +500,6 @@ Instagram
 </a>
 
 </div>
-
 </section>
 
 
