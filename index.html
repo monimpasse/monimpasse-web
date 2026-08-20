@@ -1467,6 +1467,28 @@ window.open(
 }
 
 </script>
+<script>
+document.querySelectorAll('.product').forEach(function(product){
+    product.style.cursor = 'pointer';
 
+    product.addEventListener('click', function(e){
+
+        if(
+            e.target.closest('button') ||
+            e.target.closest('input') ||
+            e.target.closest('select') ||
+            e.target.closest('label')
+        ){
+            return;
+        }
+
+        const name = product.querySelector('h3').textContent.trim();
+
+        window.location.href =
+            'Producto.html?producto=' +
+            encodeURIComponent(name);
+    });
+});
+</script>
 </body>
 </html>
