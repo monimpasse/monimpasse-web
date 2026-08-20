@@ -7,15 +7,48 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;color:#514943;background:#faf8f5;line-height:1.6}
 
-header{background:#fff;padding:22px 20px;text-align:center;border-bottom:1px solid #eee6df;position:sticky;top:0;z-index:10}
-.logo{font-family:Georgia,serif;font-size:32px;letter-spacing:2px;color:#514943}
-.tagline{font-size:13px;letter-spacing:2px;color:#9a857a;margin-top:3px}
+html{scroll-behavior:smooth}
+
+body{
+font-family:Arial,sans-serif;
+color:#514943;
+background:#faf8f5;
+line-height:1.6
+}
+
+header{
+background:#fff;
+padding:22px 20px;
+text-align:center;
+border-bottom:1px solid #eee6df;
+position:sticky;
+top:0;
+z-index:10
+}
+
+.logo{
+font-family:Georgia,serif;
+font-size:32px;
+letter-spacing:2px;
+color:#514943
+}
+
+.tagline{
+font-size:13px;
+letter-spacing:2px;
+color:#9a857a;
+margin-top:3px
+}
 
 nav{margin-top:15px}
-nav a{color:#514943;text-decoration:none;margin:0 9px;font-size:14px}
+
+nav a{
+color:#514943;
+text-decoration:none;
+margin:0 9px;
+font-size:14px
+}
 
 .hero{
 min-height:78vh;
@@ -26,12 +59,23 @@ text-align:center;
 padding:70px 25px;
 background:
 linear-gradient(rgba(250,248,245,.82),rgba(250,248,245,.92)),
-radial-gradient(circle at top right,#eadbd4,transparent 40%);
+radial-gradient(circle at top right,#eadbd4,transparent 40%)
 }
 
 .hero-content{max-width:750px}
-.hero h1{font-family:Georgia,serif;font-size:clamp(42px,8vw,76px);font-weight:normal;margin-bottom:18px}
-.hero p{font-size:18px;color:#756a64;margin-bottom:30px}
+
+.hero h1{
+font-family:Georgia,serif;
+font-size:clamp(42px,8vw,76px);
+font-weight:normal;
+margin-bottom:18px
+}
+
+.hero p{
+font-size:18px;
+color:#756a64;
+margin-bottom:30px
+}
 
 .button{
 display:inline-block;
@@ -40,13 +84,28 @@ color:white;
 text-decoration:none;
 padding:13px 27px;
 border-radius:30px;
-font-size:14px
+font-size:14px;
+border:0;
+cursor:pointer
 }
 
 section{padding:75px 20px}
-.section-title{text-align:center;margin-bottom:45px}
-.section-title h2{font-family:Georgia,serif;font-size:36px;font-weight:normal}
-.section-title p{color:#8d8179;margin-top:8px}
+
+.section-title{
+text-align:center;
+margin-bottom:45px
+}
+
+.section-title h2{
+font-family:Georgia,serif;
+font-size:36px;
+font-weight:normal
+}
+
+.section-title p{
+color:#8d8179;
+margin-top:8px
+}
 
 .products{
 max-width:1100px;
@@ -91,28 +150,89 @@ font-size:22px;
 margin:8px 0 14px
 }
 
-.options{
-display:flex;
-flex-wrap:wrap;
-gap:7px
+.purchase{
+margin-top:15px;
+padding-top:15px;
+border-top:1px solid #eee6df
 }
 
-.option{
+.field{margin-bottom:12px}
+
+.field label{
+display:block;
 font-size:12px;
-color:#8d7468;
-background:#f4ede8;
-padding:6px 10px;
-border-radius:20px
+color:#776d67;
+margin-bottom:5px
 }
 
-.custom-note{
-font-size:13px;
-color:#8d8179;
-margin-top:12px
+.field select,
+.field input{
+width:100%;
+padding:10px 11px;
+border:1px solid #e4d9d2;
+border-radius:10px;
+background:#fff;
+color:#514943;
+font-size:14px
+}
+
+.quantity{
+max-width:100px
+}
+
+.add-button{
+width:100%;
+margin-top:4px
+}
+
+.personal-field{
+display:none
+}
+
+.cart{
+max-width:900px;
+margin:45px auto 0;
+background:#fff;
+border-radius:18px;
+padding:25px;
+box-shadow:0 5px 20px rgba(70,55,45,.06);
+display:none
+}
+
+.cart h3{
+font-family:Georgia,serif;
+font-size:26px;
+font-weight:normal;
+margin-bottom:15px
+}
+
+.cart-item{
+padding:12px 0;
+border-bottom:1px solid #eee6df;
+font-size:14px
+}
+
+.cart-total{
+font-family:Georgia,serif;
+font-size:22px;
+margin:20px 0
+}
+
+.remove{
+border:0;
+background:none;
+color:#9a857a;
+cursor:pointer;
+float:right
 }
 
 .about{background:#fff}
-.about-content{max-width:900px;margin:auto;text-align:center}
+
+.about-content{
+max-width:900px;
+margin:auto;
+text-align:center
+}
 
 .about-content h2{
 font-family:Georgia,serif;
@@ -135,13 +255,38 @@ grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:25px
 }
 
-.value{text-align:center;padding:25px}
-.value span{font-size:32px;display:block;margin-bottom:10px}
-.value h3{font-family:Georgia,serif;font-weight:normal;font-size:21px;margin-bottom:7px}
-.value p{font-size:14px;color:#776d67}
+.value{
+text-align:center;
+padding:25px
+}
 
-.custom{text-align:center;background:#eee5df}
-.custom-content{max-width:700px;margin:auto}
+.value span{
+font-size:32px;
+display:block;
+margin-bottom:10px
+}
+
+.value h3{
+font-family:Georgia,serif;
+font-weight:normal;
+font-size:21px;
+margin-bottom:7px
+}
+
+.value p{
+font-size:14px;
+color:#776d67
+}
+
+.custom{
+text-align:center;
+background:#eee5df
+}
+
+.custom-content{
+max-width:700px;
+margin:auto
+}
 
 .custom h2{
 font-family:Georgia,serif;
@@ -150,7 +295,10 @@ font-weight:normal;
 margin-bottom:18px
 }
 
-.custom p{margin-bottom:25px;color:#6f645e}
+.custom p{
+margin-bottom:25px;
+color:#6f645e
+}
 
 .instagram{text-align:center}
 
@@ -170,8 +318,15 @@ font-weight:normal;
 margin-bottom:10px
 }
 
-.instagram-box p{color:#776d67;margin-bottom:22px}
-.instagram-name{font-size:20px;margin-bottom:22px}
+.instagram-box p{
+color:#776d67;
+margin-bottom:22px
+}
+
+.instagram-name{
+font-size:20px;
+margin-bottom:22px
+}
 
 footer{
 background:#514943;
@@ -186,20 +341,41 @@ font-size:27px;
 margin-bottom:8px
 }
 
-footer p{font-size:13px;color:#ddd4cf}
+footer p{
+font-size:13px;
+color:#ddd4cf
+}
 
 @media(max-width:600px){
+
 header{padding:17px 12px}
+
 .logo{font-size:27px}
-nav a{font-size:12px;margin:0 5px}
-.hero{min-height:70vh;padding:55px 20px}
+
+nav a{
+font-size:12px;
+margin:0 5px
+}
+
+.hero{
+min-height:70vh;
+padding:55px 20px
+}
+
 .hero h1{font-size:48px}
+
 .hero p{font-size:16px}
+
 section{padding:60px 18px}
+
 .section-title h2,
 .about-content h2,
-.custom h2{font-size:31px}
+.custom h2{
+font-size:31px
+}
+
 .product-image{height:260px}
+
 .products{grid-template-columns:1fr}
 }
 </style>
@@ -208,8 +384,12 @@ section{padding:60px 18px}
 <body>
 
 <header>
+
 <div class="logo">Mon Impasse</div>
-<div class="tagline">HECHO A MANO · CON CARIÑO</div>
+
+<div class="tagline">
+HECHO A MANO · CON CARIÑO
+</div>
 
 <nav>
 <a href="#inicio">Inicio</a>
@@ -218,10 +398,14 @@ section{padding:60px 18px}
 <a href="#personalizados">Personalizados</a>
 <a href="#contacto">Contacto</a>
 </nav>
+
 </header>
 
+
 <section class="hero" id="inicio">
+
 <div class="hero-content">
+
 <h1>Mon Impasse</h1>
 
 <p>
@@ -232,19 +416,30 @@ cada día un poquito más especial.
 <a class="button" href="#productos">
 Descubrir la colección
 </a>
+
 </div>
+
 </section>
+
 
 <section id="productos">
 
 <div class="section-title">
+
 <h2>Hecho para ti</h2>
-<p>Piezas artesanales pensadas para acompañarte.</p>
+
+<p>
+Piezas artesanales pensadas para acompañarte.
+</p>
+
 </div>
+
 
 <div class="products">
 
+
 <!-- TOTEBAG -->
+
 <article class="product">
 
 <img
@@ -264,17 +459,93 @@ confeccionado a mano.
 
 <div class="price">25 €</div>
 
-<div class="options">
-<span class="option">Elige tu tela</span>
-<span class="option">Nombre +5 €</span>
-<span class="option">Inicial +3 €</span>
+<div class="purchase">
+
+<div class="field">
+
+<label>Tela</label>
+
+<input
+type="text"
+class="fabric"
+placeholder="Indica la tela que quieres"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>Personalización</label>
+
+<select
+class="personalization"
+onchange="changePersonalization(this)"
+>
+
+<option value="none">
+Sin personalizar
+</option>
+
+<option value="name">
+Nombre bordado (+5 €)
+</option>
+
+<option value="initial">
+Inicial bordada (+3 €)
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field personal-field">
+
+<label class="personal-label">
+Nombre o inicial
+</label>
+
+<input
+type="text"
+class="personal-text"
+placeholder="Escribe aquí"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>Cantidad</label>
+
+<input
+type="number"
+class="quantity"
+value="1"
+min="1"
+>
+
+</div>
+
+
+<button
+class="button add-button"
+onclick="addProduct(this,25,'Totebag sencillo')"
+>
+Añadir al pedido
+</button>
+
 </div>
 
 </div>
+
 </article>
 
 
+
 <!-- NECESER XL -->
+
 <article class="product">
 
 <img
@@ -294,21 +565,93 @@ todo lo que necesitas.
 
 <div class="price">25 €</div>
 
-<div class="options">
-<span class="option">Elige tu tela</span>
-<span class="option">Nombre +5 €</span>
-<span class="option">Inicial +3 €</span>
+<div class="purchase">
+
+<div class="field">
+
+<label>Tela</label>
+
+<input
+type="text"
+class="fabric"
+placeholder="Indica la tela que quieres"
+>
+
 </div>
 
-<div class="custom-note">
-La impermeabilidad depende de la tela elegida.
+
+<div class="field">
+
+<label>Personalización</label>
+
+<select
+class="personalization"
+onchange="changePersonalization(this)"
+>
+
+<option value="none">
+Sin personalizar
+</option>
+
+<option value="name">
+Nombre bordado (+5 €)
+</option>
+
+<option value="initial">
+Inicial bordada (+3 €)
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field personal-field">
+
+<label class="personal-label">
+Nombre o inicial
+</label>
+
+<input
+type="text"
+class="personal-text"
+placeholder="Escribe aquí"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>Cantidad</label>
+
+<input
+type="number"
+class="quantity"
+value="1"
+min="1"
+>
+
+</div>
+
+
+<button
+class="button add-button"
+onclick="addProduct(this,25,'Neceser XL')"
+>
+Añadir al pedido
+</button>
+
 </div>
 
 </div>
+
 </article>
 
 
+
 <!-- NECESER BASIC -->
+
 <article class="product">
 
 <img
@@ -328,17 +671,93 @@ y hecho a mano.
 
 <div class="price">20 €</div>
 
-<div class="options">
-<span class="option">Elige tu tela</span>
-<span class="option">Nombre +5 €</span>
-<span class="option">Inicial +3 €</span>
+<div class="purchase">
+
+<div class="field">
+
+<label>Tela</label>
+
+<input
+type="text"
+class="fabric"
+placeholder="Indica la tela que quieres"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>Personalización</label>
+
+<select
+class="personalization"
+onchange="changePersonalization(this)"
+>
+
+<option value="none">
+Sin personalizar
+</option>
+
+<option value="name">
+Nombre bordado (+5 €)
+</option>
+
+<option value="initial">
+Inicial bordada (+3 €)
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field personal-field">
+
+<label class="personal-label">
+Nombre o inicial
+</label>
+
+<input
+type="text"
+class="personal-text"
+placeholder="Escribe aquí"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>Cantidad</label>
+
+<input
+type="number"
+class="quantity"
+value="1"
+min="1"
+>
+
+</div>
+
+
+<button
+class="button add-button"
+onclick="addProduct(this,20,'Neceser Basic')"
+>
+Añadir al pedido
+</button>
+
 </div>
 
 </div>
+
 </article>
 
 
+
 <!-- BABERO -->
+
 <article class="product">
 
 <img
@@ -358,17 +777,93 @@ para los más pequeños.
 
 <div class="price">10 €</div>
 
-<div class="options">
-<span class="option">Elige tu tela</span>
-<span class="option">Nombre +5 €</span>
-<span class="option">Inicial +3 €</span>
+<div class="purchase">
+
+<div class="field">
+
+<label>Tela</label>
+
+<input
+type="text"
+class="fabric"
+placeholder="Indica la tela que quieres"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>Personalización</label>
+
+<select
+class="personalization"
+onchange="changePersonalization(this)"
+>
+
+<option value="none">
+Sin personalizar
+</option>
+
+<option value="name">
+Nombre bordado (+5 €)
+</option>
+
+<option value="initial">
+Inicial bordada (+3 €)
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field personal-field">
+
+<label class="personal-label">
+Nombre o inicial
+</label>
+
+<input
+type="text"
+class="personal-text"
+placeholder="Escribe aquí"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>Cantidad</label>
+
+<input
+type="number"
+class="quantity"
+value="1"
+min="1"
+>
+
+</div>
+
+
+<button
+class="button add-button"
+onclick="addProduct(this,10,'Babero')"
+>
+Añadir al pedido
+</button>
+
 </div>
 
 </div>
+
 </article>
 
 
+
 <!-- PACK BEBÉ -->
+
 <article class="product">
 
 <img
@@ -388,24 +883,142 @@ para los más pequeños.
 
 <div class="price">50 €</div>
 
-<div class="options">
-<span class="option">Elige tu tela</span>
-<span class="option">Nombre +5 €</span>
-<span class="option">Inicial +3 €</span>
+<div class="purchase">
+
+<div class="field">
+
+<label>Tela</label>
+
+<input
+type="text"
+class="fabric"
+placeholder="Indica la tela que quieres"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>Personalización</label>
+
+<select
+class="personalization"
+onchange="changePersonalization(this)"
+>
+
+<option value="none">
+Sin personalizar
+</option>
+
+<option value="name">
+Nombre bordado (+5 €)
+</option>
+
+<option value="initial">
+Inicial bordada (+3 €)
+</option>
+
+</select>
+
+</div>
+
+
+<div class="field personal-field">
+
+<label class="personal-label">
+Nombre o inicial
+</label>
+
+<input
+type="text"
+class="personal-text"
+placeholder="Escribe aquí"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>Cantidad</label>
+
+<input
+type="number"
+class="quantity"
+value="1"
+min="1"
+>
+
+</div>
+
+
+<button
+class="button add-button"
+onclick="addProduct(this,50,'Pack bebé')"
+>
+Añadir al pedido
+</button>
+
 </div>
 
 </div>
+
 </article>
 
 </div>
+
+
+
+<!-- PEDIDO -->
+
+<div
+class="cart"
+id="cart"
+>
+
+<h3>Tu pedido</h3>
+
+<div id="cart-list"></div>
+
+<div
+class="cart-total"
+id="cart-total"
+>
+Total: 0 €
+</div>
+
+<button
+class="button"
+onclick="sendOrder()"
+>
+Preparar pedido
+</button>
+
+<button
+class="button"
+onclick="clearCart()"
+style="margin-left:8px;background:#eee5df;color:#514943"
+>
+Vaciar pedido
+</button>
+
+</div>
+
 </section>
 
 
-<section class="about" id="nosotros">
+
+<section
+class="about"
+id="nosotros"
+>
 
 <div class="about-content">
 
-<h2>Detrás de Mon Impasse</h2>
+<h2>
+Detrás de Mon Impasse
+</h2>
 
 <p>
 Mon Impasse nace de la pasión por crear con las manos,
@@ -422,31 +1035,45 @@ pensando en que sea bonita, práctica y especial.
 <div class="value">
 <span>♡</span>
 <h3>Hecho a mano</h3>
-<p>Cada pieza está confeccionada con mimo.</p>
+<p>
+Cada pieza está confeccionada con mimo.
+</p>
 </div>
 
 <div class="value">
 <span>✦</span>
 <h3>Único</h3>
-<p>Diseños y combinaciones para hacerlos tuyos.</p>
+<p>
+Diseños y combinaciones para hacerlos tuyos.
+</p>
 </div>
 
 <div class="value">
 <span>⌁</span>
 <h3>Con cariño</h3>
-<p>Porque los pequeños detalles importan.</p>
+<p>
+Porque los pequeños detalles importan.
+</p>
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 
-<section class="custom" id="personalizados">
+
+<section
+class="custom"
+id="personalizados"
+>
 
 <div class="custom-content">
 
-<h2>¿Lo quieres personalizado?</h2>
+<h2>
+¿Lo quieres personalizado?
+</h2>
 
 <p>
 Todos nuestros productos pueden confeccionarse
@@ -463,14 +1090,21 @@ Escríbeme por Instagram
 </a>
 
 </div>
+
 </section>
 
 
-<section class="instagram" id="contacto">
+
+<section
+class="instagram"
+id="contacto"
+>
 
 <div class="section-title">
 
-<h2>Nos vemos en Instagram</h2>
+<h2>
+Nos vemos en Instagram
+</h2>
 
 <p>
 Descubre novedades, tejidos y nuevas creaciones.
@@ -480,7 +1114,9 @@ Descubre novedades, tejidos y nuevas creaciones.
 
 <div class="instagram-box">
 
-<h2>Mon Impasse</h2>
+<h2>
+Mon Impasse
+</h2>
 
 <div class="instagram-name">
 @mon.impasse
@@ -500,7 +1136,9 @@ Instagram
 </a>
 
 </div>
+
 </section>
+
 
 
 <footer>
@@ -514,6 +1152,319 @@ Hecho a mano con cariño · © 2026 Mon Impasse
 </p>
 
 </footer>
+
+
+
+<script>
+
+let cart=[];
+
+
+function changePersonalization(select){
+
+const purchase=select.closest('.purchase');
+
+const field=purchase.querySelector('.personal-field');
+
+const label=purchase.querySelector('.personal-label');
+
+const input=purchase.querySelector('.personal-text');
+
+
+if(select.value==="none"){
+
+field.style.display="none";
+
+input.value="";
+
+}
+
+else{
+
+field.style.display="block";
+
+if(select.value==="name"){
+
+label.textContent="Nombre";
+
+input.placeholder="Escribe el nombre";
+
+}
+
+else{
+
+label.textContent="Inicial";
+
+input.placeholder="Escribe la inicial";
+
+}
+
+}
+
+}
+
+
+
+function addProduct(button,basePrice,name){
+
+const purchase=button.closest('.purchase');
+
+const fabricInput=purchase.querySelector('.fabric');
+
+const personalization=purchase.querySelector('.personalization');
+
+const personalText=purchase.querySelector('.personal-text');
+
+const quantityInput=purchase.querySelector('.quantity');
+
+
+const fabric=
+fabricInput.value.trim() || "Tela por elegir";
+
+
+const quantity=
+Math.max(
+1,
+parseInt(quantityInput.value)||1
+);
+
+
+let extra=0;
+
+let personal="Sin personalizar";
+
+
+if(personalization.value==="name"){
+
+extra=5;
+
+personal=
+"Nombre: "+
+(personalText.value.trim() || "pendiente");
+
+}
+
+
+if(personalization.value==="initial"){
+
+extra=3;
+
+personal=
+"Inicial: "+
+(personalText.value.trim() || "pendiente");
+
+}
+
+
+const unitPrice=
+basePrice+extra;
+
+
+cart.push({
+
+name:name,
+
+fabric:fabric,
+
+personal:personal,
+
+quantity:quantity,
+
+unitPrice:unitPrice
+
+});
+
+
+renderCart();
+
+document
+.getElementById("cart")
+.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+}
+
+
+
+function renderCart(){
+
+const cartBox=
+document.getElementById("cart");
+
+const list=
+document.getElementById("cart-list");
+
+const totalBox=
+document.getElementById("cart-total");
+
+
+if(cart.length===0){
+
+cartBox.style.display="none";
+
+return;
+
+}
+
+
+cartBox.style.display="block";
+
+
+list.innerHTML="";
+
+
+let total=0;
+
+
+cart.forEach(
+(item,index)=>{
+
+const subtotal=
+item.quantity*item.unitPrice;
+
+total+=subtotal;
+
+
+const div=
+document.createElement("div");
+
+div.className="cart-item";
+
+
+div.innerHTML=
+"<strong>"+
+item.quantity+
+" × "+
+item.name+
+"</strong><br>"+
+"Tela: "+
+escapeHtml(item.fabric)+
+"<br>"+
+escapeHtml(item.personal)+
+"<br>"+
+subtotal+
+" € "+
+"<button class='remove' onclick='removeItem("+
+index+
+")'>Eliminar</button>";
+
+
+list.appendChild(div);
+
+});
+
+
+totalBox.textContent=
+"Total: "+
+total+
+" €";
+
+}
+
+
+
+function removeItem(index){
+
+cart.splice(index,1);
+
+renderCart();
+
+}
+
+
+
+function clearCart(){
+
+cart=[];
+
+renderCart();
+
+}
+
+
+
+function escapeHtml(text){
+
+return text.replace(
+/[&<>'"]/g,
+function(char){
+
+return {
+
+"&":"&amp;",
+
+"<":"&lt;",
+
+">":"&gt;",
+
+"'":"&#39;",
+
+'"':"&quot;"
+
+}[char];
+
+}
+);
+
+}
+
+
+
+function sendOrder(){
+
+if(!cart.length){
+
+return;
+
+}
+
+
+let message=
+"Hola, quiero hacer un pedido en Mon Impasse:%0A%0A";
+
+let total=0;
+
+
+cart.forEach(
+item=>{
+
+const subtotal=
+item.quantity*item.unitPrice;
+
+total+=subtotal;
+
+
+message+=
+item.quantity+
+" x "+
+encodeURIComponent(item.name)+
+" — Tela: "+
+encodeURIComponent(item.fabric)+
+" — "+
+encodeURIComponent(item.personal)+
+" — "+
+subtotal+
+" €%0A";
+
+});
+
+
+message+=
+"%0ATotal: "+
+total+
+" €";
+
+
+window.open(
+"mailto:mon.impasse@gmail.com?subject=Pedido Mon Impasse&body="+message,
+"_blank"
+);
+
+}
+
+</script>
 
 </body>
 </html>
