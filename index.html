@@ -18,8 +18,8 @@ html{
 }
 
 body{
-  font-family:Arial, sans-serif;
-  color:#3f3a38;
+  font-family:Arial,sans-serif;
+  color:#514943;
   background:#faf8f5;
   line-height:1.6;
 }
@@ -35,7 +35,7 @@ header{
 }
 
 .logo{
-  font-family:Georgia, serif;
+  font-family:Georgia,serif;
   font-size:32px;
   letter-spacing:2px;
   color:#514943;
@@ -44,7 +44,7 @@ header{
 .tagline{
   font-size:13px;
   letter-spacing:2px;
-  color:#8d8179;
+  color:#9a857a;
   margin-top:3px;
 }
 
@@ -122,7 +122,6 @@ section{
   font-family:Georgia,serif;
   font-size:36px;
   font-weight:normal;
-  color:#514943;
 }
 
 .section-title p{
@@ -143,18 +142,18 @@ section{
   border-radius:18px;
   overflow:hidden;
   box-shadow:0 5px 20px rgba(70,55,45,.07);
+  transition:.2s;
+}
+
+.product:hover{
+  transform:translateY(-4px);
 }
 
 .product-image{
-  height:260px;
-  background:#eee7e1;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#9a8e87;
-  font-size:14px;
-  text-align:center;
-  padding:20px;
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  display:block;
 }
 
 .product-info{
@@ -171,6 +170,16 @@ section{
 .product p{
   font-size:14px;
   color:#776d67;
+  margin-bottom:15px;
+}
+
+.fabric{
+  display:inline-block;
+  font-size:12px;
+  color:#8d7468;
+  background:#f4ede8;
+  padding:6px 11px;
+  border-radius:20px;
 }
 
 .about{
@@ -337,7 +346,7 @@ footer p{
   }
 
   .product-image{
-    height:230px;
+    height:260px;
   }
 }
 </style>
@@ -346,8 +355,12 @@ footer p{
 <body>
 
 <header>
+
   <div class="logo">Mon Impasse</div>
-  <div class="tagline">HECHO A MANO · CON CARIÑO</div>
+
+  <div class="tagline">
+    HECHO A MANO · CON CARIÑO
+  </div>
 
   <nav>
     <a href="#inicio">Inicio</a>
@@ -356,10 +369,12 @@ footer p{
     <a href="#personalizados">Personalizados</a>
     <a href="#contacto">Contacto</a>
   </nav>
+
 </header>
 
 
 <section class="hero" id="inicio">
+
   <div class="hero-content">
 
     <h1>Mon Impasse</h1>
@@ -374,78 +389,158 @@ footer p{
     </a>
 
   </div>
+
 </section>
 
 
 <section id="productos">
 
   <div class="section-title">
+
     <h2>Hecho para ti</h2>
-    <p>Piezas artesanales pensadas para acompañarte.</p>
+
+    <p>
+      Piezas artesanales pensadas para acompañarte.
+    </p>
+
   </div>
+
 
   <div class="products">
 
+
     <article class="product">
-      <div class="product-image">
-        Aquí irá la foto de tus bolsos
-      </div>
+
+      <img
+        class="product-image"
+        src="IMG_8310.jpeg"
+        alt="Producto Mon Impasse"
+      >
 
       <div class="product-info">
+
         <h3>Bolsos</h3>
+
         <p>
           Diseños prácticos y especiales,
           confeccionados a mano.
         </p>
+
+        <span class="fabric">
+          Elige tu tela
+        </span>
+
       </div>
+
     </article>
 
 
     <article class="product">
-      <div class="product-image">
-        Aquí irá la foto de tus packs
-      </div>
+
+      <img
+        class="product-image"
+        src="Photoroom_20250611_131104.jpeg"
+        alt="Pack bebé Mon Impasse"
+      >
 
       <div class="product-info">
+
         <h3>Packs bebé</h3>
+
         <p>
           Detalles bonitos y funcionales
           para los más pequeños.
         </p>
+
+        <span class="fabric">
+          Elige tu tela
+        </span>
+
       </div>
+
     </article>
 
 
     <article class="product">
-      <div class="product-image">
-        Aquí irá la foto de tus mochilas
-      </div>
+
+      <img
+        class="product-image"
+        src="Photoroom_20250623_161929.jpeg"
+        alt="Producto Mon Impasse"
+      >
 
       <div class="product-info">
+
         <h3>Mochilas</h3>
+
         <p>
           Diseños únicos para acompañar
           cada aventura.
         </p>
+
+        <span class="fabric">
+          Elige tu tela
+        </span>
+
       </div>
+
     </article>
 
 
     <article class="product">
-      <div class="product-image">
-        Aquí irá la foto de tus personalizados
-      </div>
+
+      <img
+        class="product-image"
+        src="23D60334-06E7-487A-9B65-81E7311500AF.png"
+        alt="Neceser Mon Impasse"
+      >
 
       <div class="product-info">
+
+        <h3>Neceser</h3>
+
+        <p>
+          Piezas bonitas y prácticas
+          para llevar todo contigo.
+        </p>
+
+        <span class="fabric">
+          Elige tu tela
+        </span>
+
+      </div>
+
+    </article>
+
+
+    <article class="product">
+
+      <img
+        class="product-image"
+        src="3C5AFE69-450A-43BD-88A5-C5CD9377024E.png"
+        alt="Producto personalizado Mon Impasse"
+      >
+
+      <div class="product-info">
+
         <h3>Personalizados</h3>
+
         <p>
           Elige tejidos, colores y detalles
           para crear una pieza única.
         </p>
+
+        <span class="fabric">
+          Tela + nombre bordado
+        </span>
+
       </div>
+
     </article>
 
+
   </div>
+
 </section>
 
 
@@ -465,24 +560,45 @@ footer p{
       pensando en que sea bonita, práctica y especial.
     </p>
 
+
     <div class="values">
 
       <div class="value">
+
         <span>♡</span>
+
         <h3>Hecho a mano</h3>
-        <p>Cada pieza está confeccionada con mimo.</p>
+
+        <p>
+          Cada pieza está confeccionada con mimo.
+        </p>
+
       </div>
 
+
       <div class="value">
+
         <span>✦</span>
+
         <h3>Único</h3>
-        <p>Diseños y combinaciones para hacerlos tuyos.</p>
+
+        <p>
+          Diseños y combinaciones para hacerlos tuyos.
+        </p>
+
       </div>
 
+
       <div class="value">
+
         <span>⌁</span>
+
         <h3>Con cariño</h3>
-        <p>Porque los pequeños detalles importan.</p>
+
+        <p>
+          Porque los pequeños detalles importan.
+        </p>
+
       </div>
 
     </div>
@@ -496,7 +612,9 @@ footer p{
 
   <div class="custom-content">
 
-    <h2>¿Lo quieres personalizado?</h2>
+    <h2>
+      ¿Lo quieres personalizado?
+    </h2>
 
     <p>
       Podemos crear tu pieza eligiendo tejidos,
@@ -519,9 +637,17 @@ footer p{
 <section class="instagram" id="contacto">
 
   <div class="section-title">
-    <h2>Nos vemos en Instagram</h2>
-    <p>Descubre novedades, tejidos y nuevas creaciones.</p>
+
+    <h2>
+      Nos vemos en Instagram
+    </h2>
+
+    <p>
+      Descubre novedades, tejidos y nuevas creaciones.
+    </p>
+
   </div>
+
 
   <div class="instagram-box">
 
@@ -560,6 +686,7 @@ footer p{
   </p>
 
 </footer>
+
 
 </body>
 </html>
