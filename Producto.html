@@ -4,41 +4,42 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Producto | Mon Impasse</title>
+<title>Mon Impasse | Producto</title>
 
 <style>
 
 *{
 box-sizing:border-box;
 margin:0;
-padding:0
+padding:0;
 }
 
 body{
 font-family:Arial,sans-serif;
 color:#514943;
 background:#faf8f5;
-line-height:1.6
+line-height:1.6;
 }
 
 header{
 background:#fff;
-padding:22px 20px;
+padding:20px;
 text-align:center;
 border-bottom:1px solid #eee6df;
 }
 
 .logo{
 font-family:Georgia,serif;
-font-size:32px;
+font-size:30px;
 letter-spacing:2px;
+color:#514943;
 }
 
 .tagline{
-font-size:13px;
+font-size:12px;
 letter-spacing:2px;
 color:#9a857a;
-margin-top:3px
+margin-top:3px;
 }
 
 .back{
@@ -46,664 +47,52 @@ display:inline-block;
 margin-top:15px;
 color:#514943;
 text-decoration:none;
-font-size:14px
+font-size:14px;
 }
 
 .product-page{
-max-width:950px;
+max-width:1000px;
 margin:50px auto;
 padding:20px;
-}
-
-.product-detail{
-background:#fff;
-border-radius:22px;
-padding:30px;
-box-shadow:0 5px 25px rgba(70,55,45,.08);
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:45px;
+gap:50px;
+align-items:start;
 }
 
 .product-photo{
 width:100%;
-height:520px;
-object-fit:cover;
-border-radius:16px;
+border-radius:20px;
 display:block;
+object-fit:cover;
+max-height:650px;
+}
+
+.product-info{
+padding:10px 0;
 }
 
 .product-info h1{
 font-family:Georgia,serif;
-font-size:38px;
+font-size:42px;
 font-weight:normal;
 margin-bottom:15px;
 }
 
 .description{
-color:#776d67;
 font-size:16px;
-margin-bottom:20px;
+color:#756a64;
+margin-bottom:25px;
 }
 
 .price{
 font-family:Georgia,serif;
 font-size:30px;
-margin:20px 0;
-}
-
-.field{
-margin-bottom:18px;
-}
-
-.field label{
-display:block;
-font-size:13px;
-color:#776d67;
-margin-bottom:7px;
-}
-
-.field select,
-.field input{
-width:100%;
-padding:12px;
-border:1px solid #e4d9d2;
-border-radius:10px;
-background:#fff;
-color:#514943;
-font-size:15px;
-}
-
-.fabric-options{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:8px;
-margin-top:8px;
-}
-
-.fabric-option{
-border:2px solid transparent;
-border-radius:10px;
-overflow:hidden;
-cursor:pointer;
-background:#fff;
-}
-
-.fabric-option.active{
-border-color:#514943;
-}
-
-.fabric-option img{
-width:100%;
-height:70px;
-object-fit:cover;
-display:block;
-}
-
-.fabric-option span{
-display:block;
-font-size:10px;
-text-align:center;
-padding:5px 2px;
-}
-
-.button{
-display:inline-block;
-width:100%;
-background:#514943;
-color:#fff;
-border:0;
-padding:14px 20px;
-border-radius:30px;
-font-size:15px;
-cursor:pointer;
-margin-top:8px;
+margin-bottom:30px;
 }
 
 .characteristics{
-margin-top:30px;
-padding-top:25px;
-border-top:1px solid #eee6df;
-}
-
-.characteristics h2{
-font-family:Georgia,serif;
-font-size:25px;
-font-weight:normal;
-margin-bottom:12px;
-}
-
-.characteristics p{
-font-size:14px;
-color:#776d67;
-margin-bottom:7px;
-}
-
-.message{
-margin-top:15px;
-text-align:center;
-font-size:13px;
-color:#776d67;
-}
-
-@media(max-width:700px){
-
-.product-page{
-margin:25px auto;
-padding:15px;
-}
-
-.product-detail{
-grid-template-columns:1fr;
-gap:25px;
-padding:20px;
-}
-
-.product-photo{
-height:400px;
-}
-
-.product-info h1{
-font-size:32px;
-}
-
-.fabric-options{
-grid-template-columns:repeat(5,1fr);
-}
-
-.fabric-option img{
-height:58px;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-
-<div class="logo">
-Mon Impasse
-</div>
-
-<div class="tagline">
-HECHO A MANO · CON CARIÑO
-</div>
-
-<a class="back" href="index.html">
-← Volver a productos
-</a>
-
-</header>
-
-
-<main class="product-page">
-
-<div class="product-detail">
-
-
-<div>
-
-<img
-id="productImage"
-class="product-photo"
-src=""
-alt=""
->
-
-</div>
-
-
-<div class="product-info">
-
-<h1 id="productName"></h1>
-
-<p
-id="productDescription"
-class="description">
-</p>
-
-<div
-id="productPrice"
-class="price">
-</div>
-
-
-<div
-id="fabricSection"
-class="field"
-style="display:none"
->
-
-<label>
-Tela
-</label>
-
-<div
-id="fabricOptions"
-class="fabric-options">
-</div>
-
-</div>
-
-
-<div class="field">
-
-<label>
-Personalización
-</label>
-
-<select id="personalization">
-
-<option value="none">
-Sin personalizar
-</option>
-
-<option value="name">
-Nombre bordado (+5 €)
-</option>
-
-<option value="initial">
-Inicial bordada (+3 €)
-</option>
-
-</select>
-
-</div>
-
-
-<div
-id="personalTextField"
-class="field"
-style="display:none"
->
-
-<label>
-Nombre o inicial
-</label>
-
-<input
-id="personalText"
-type="text"
-placeholder="Escribe aquí"
->
-
-</div>
-
-
-<div class="field">
-
-<label>
-Cantidad
-</label>
-
-<input
-id="quantity"
-type="number"
-value="1"
-min="1"
->
-
-</div>
-
-
-<button
-class="button"
-onclick="sendOrder()"
->
-Solicitar este producto
-</button>
-
-
-<div
-id="message"
-class="message">
-</div>
-
-
-<div class="characteristics">
-
-<h2>
-Características
-</h2>
-
-<p>
-✓ Producto confeccionado a mano
-</p>
-
-<p>
-✓ Puedes elegir la tela
-</p>
-
-<p>
-✓ Posibilidad de personalización
-</p>
-
-<p id="extraCharacteristic"></p>
-
-</div>
-
-</div>
-
-</div>
-
-</main>
-
-
-<script>
-
-const products = {
-
-"Totebag sencillo":{
-
-image:"IMG_8310.jpeg",
-
-price:25,
-
-description:
-"Un bolso práctico y especial, confeccionado a mano.",
-
-extra:"Un diseño pensado para acompañarte en el día a día."
-
-},
-
-
-"Neceser S":{
-
-image:"1842F9C7-F1AB-478A-81F5-9A934840A969.png",
-
-price:15,
-
-description:
-"Un neceser pequeño, práctico y bonito, ideal para llevar tus imprescindibles. Sin bolsillos interiores.",
-
-extra:
-"Neceser S sin bolsillos interiores.",
-
-fabrics:[
-
-{
-name:"Modelo 1",
-image:"1842F9C7-F1AB-478A-81F5-9A934840A969.png"
-},
-
-{
-name:"Modelo 2",
-image:"37AE8F00-7105-4271-B1BF-BF2501A64952.png"
-},
-
-{
-name:"Modelo 3",
-image:"C0C87334-0E0A-441D-B9A7-0E1B4DE5EFB2.png"
-},
-
-{
-name:"Modelo 4",
-image:"C3748FB5-B11E-4675-B1C0-51BE4D333829.png"
-},
-
-{
-name:"Modelo 5",
-image:"ED6FEB98-3FBE-44C0-9E4A-EA0A55CFA1F3.png"
-}
-
-]
-
-},
-
-
-"Neceser Basic":{
-
-image:"Photoroom_20250623_161929.jpeg",
-
-price:20,
-
-description:
-"Un diseño sencillo, práctico y hecho a mano.",
-
-extra:
-"Un neceser pensado para llevar tus imprescindibles."
-
-},
-
-
-"Babero":{
-
-image:"3C5AFE69-450A-43BD-88A5-C5CD9377024E.png",
-
-price:10,
-
-description:
-"Un detalle bonito y funcional para los más pequeños.",
-
-extra:
-"Práctico y pensado para el día a día."
-
-},
-
-
-"Pack bebé":{
-
-image:"23D60334-06E7-487A-9B65-81E7311500AF.png",
-
-price:50,
-
-description:
-"Un pack especial y práctico para los más pequeños.",
-
-extra:
-"Una combinación pensada para acompañar al bebé."
-
-}
-
-};
-
-
-const params =
-new URLSearchParams(window.location.search);
-
-const productName =
-params.get("producto") || "Neceser S";
-
-
-const product =
-products[productName] || products["Neceser S"];
-
-
-document.getElementById("productName").textContent =
-productName;
-
-
-document.getElementById("productDescription").textContent =
-product.description;
-
-
-document.getElementById("productPrice").textContent =
-product.price + " €";
-
-
-document.getElementById("productImage").src =
-product.image;
-
-
-document.getElementById("productImage").alt =
-productName + " Mon Impasse";
-
-
-document.getElementById("extraCharacteristic").textContent =
-"✓ " + product.extra;
-
-
-if(product.fabrics){
-
-const fabricSection =
-document.getElementById("fabricSection");
-
-const fabricOptions =
-document.getElementById("fabricOptions");
-
-fabricSection.style.display="block";
-
-
-product.fabrics.forEach((fabric,index)=>{
-
-const option =
-document.createElement("div");
-
-option.className="fabric-option";
-
-if(index===0){
-option.classList.add("active");
-}
-
-option.innerHTML=`
-
-<img
-src="${fabric.image}"
-alt="${fabric.name}"
->
-
-<span>
-${fabric.name}
-</span>
-
-`;
-
-option.onclick=function(){
-
-document
-.querySelectorAll(".fabric-option")
-.forEach(el=>{
-el.classList.remove("active");
-});
-
-option.classList.add("active");
-
-document.getElementById("productImage").src =
-fabric.image;
-
-};
-
-fabricOptions.appendChild(option);
-
-});
-
-}
-
-
-document
-.getElementById("personalization")
-.addEventListener("change",function(){
-
-const field =
-document.getElementById("personalTextField");
-
-if(this.value==="none"){
-
-field.style.display="none";
-
-}else{
-
-field.style.display="block";
-
-}
-
-});
-
-
-function sendOrder(){
-
-const personalization =
-document.getElementById("personalization").value;
-
-const personalText =
-document.getElementById("personalText").value;
-
-const quantity =
-document.getElementById("quantity").value;
-
-
-let extraPrice=0;
-
-if(personalization==="name"){
-extraPrice=5;
-}
-
-if(personalization==="initial"){
-extraPrice=3;
-}
-
-
-const total =
-(product.price + extraPrice) *
-Number(quantity);
-
-
-let fabric="";
-
-if(product.fabrics){
-
-const active =
-document.querySelector(".fabric-option.active");
-
-if(active){
-
-fabric =
-active.querySelector("span").textContent;
-
-}
-
-}
-
-
-let message =
-"Hola, quiero hacer un pedido:%0A%0A";
-
-message +=
-"Producto: " + productName + "%0A";
-
-message +=
-"Cantidad: " + quantity + "%0A";
-
-message +=
-"Precio unitario: " +
-(product.price + extraPrice) +
-" €%0A";
-
-message +=
-"Total: " + total + " €%0A";
-
-
-if(fabric){
-
-message +=
-"Tela: " + fabric + "%0A";
-
-}
-
-
-if(personalization!=="none"){
-
-message +=
-"Personalización: " +
-personalization + "%0A";
-
-message +=
-"Texto: " +
-personalText + "%0A";
-
-}
-
-
-window.location.href =
-"mailto:mon.impasse@gmail.com?subject=Pedido Mon Impasse&body="
-+ message;
-
-}
-
-</script>
-
-</body>
-</html>
+border-top:1px solid #e8ded7;
+border-bottom:1px solid #e8ded7;
+padding:20px 0;
+margin-bottom:
