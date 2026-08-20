@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mon Impasse | Hecho a mano</title>
 
 <style>
@@ -59,10 +58,6 @@ nav a{
   font-size:14px;
 }
 
-nav a:hover{
-  color:#b48f82;
-}
-
 .hero{
   min-height:78vh;
   display:flex;
@@ -83,7 +78,6 @@ nav a:hover{
   font-family:Georgia,serif;
   font-size:clamp(42px,8vw,76px);
   font-weight:normal;
-  color:#514943;
   margin-bottom:18px;
 }
 
@@ -101,12 +95,6 @@ nav a:hover{
   padding:13px 27px;
   border-radius:30px;
   font-size:14px;
-  transition:.2s;
-}
-
-.button:hover{
-  background:#8d7468;
-  transform:translateY(-2px);
 }
 
 section{
@@ -142,11 +130,6 @@ section{
   border-radius:18px;
   overflow:hidden;
   box-shadow:0 5px 20px rgba(70,55,45,.07);
-  transition:.2s;
-}
-
-.product:hover{
-  transform:translateY(-4px);
 }
 
 .product-image{
@@ -170,16 +153,33 @@ section{
 .product p{
   font-size:14px;
   color:#776d67;
-  margin-bottom:15px;
+  margin-bottom:12px;
 }
 
-.fabric{
-  display:inline-block;
+.price{
+  font-family:Georgia,serif;
+  font-size:22px;
+  margin:8px 0 14px;
+}
+
+.options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+}
+
+.option{
   font-size:12px;
   color:#8d7468;
   background:#f4ede8;
-  padding:6px 11px;
+  padding:6px 10px;
   border-radius:20px;
+}
+
+.custom-note{
+  font-size:13px;
+  color:#8d8179;
+  margin-top:12px;
 }
 
 .about{
@@ -285,7 +285,6 @@ section{
 
 .instagram-name{
   font-size:20px;
-  color:#514943;
   margin-bottom:22px;
 }
 
@@ -348,6 +347,10 @@ footer p{
   .product-image{
     height:260px;
   }
+
+  .products{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -356,337 +359,441 @@ footer p{
 
 <header>
 
-  <div class="logo">Mon Impasse</div>
+<div class="logo">Mon Impasse</div>
 
-  <div class="tagline">
-    HECHO A MANO · CON CARIÑO
-  </div>
+<div class="tagline">
+HECHO A MANO · CON CARIÑO
+</div>
 
-  <nav>
-    <a href="#inicio">Inicio</a>
-    <a href="#productos">Productos</a>
-    <a href="#nosotros">Nosotros</a>
-    <a href="#personalizados">Personalizados</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#productos">Productos</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#personalizados">Personalizados</a>
+<a href="#contacto">Contacto</a>
+</nav>
 
 </header>
 
 
 <section class="hero" id="inicio">
 
-  <div class="hero-content">
+<div class="hero-content">
 
-    <h1>Mon Impasse</h1>
+<h1>Mon Impasse</h1>
 
-    <p>
-      Pequeñas cosas hechas a mano para hacer
-      cada día un poquito más especial.
-    </p>
+<p>
+Pequeñas cosas hechas a mano para hacer
+cada día un poquito más especial.
+</p>
 
-    <a class="button" href="#productos">
-      Descubrir la colección
-    </a>
+<a class="button" href="#productos">
+Descubrir la colección
+</a>
 
-  </div>
+</div>
 
 </section>
 
 
 <section id="productos">
 
-  <div class="section-title">
+<div class="section-title">
 
-    <h2>Hecho para ti</h2>
+<h2>Hecho para ti</h2>
 
-    <p>
-      Piezas artesanales pensadas para acompañarte.
-    </p>
+<p>
+Piezas artesanales pensadas para acompañarte.
+</p>
 
-  </div>
-
-
-  <div class="products">
+</div>
 
 
-    <article class="product">
-
-      <img
-        class="product-image"
-        src="IMG_8310.jpeg"
-        alt="Producto Mon Impasse"
-      >
-
-      <div class="product-info">
-
-        <h3>Bolsos</h3>
-
-        <p>
-          Diseños prácticos y especiales,
-          confeccionados a mano.
-        </p>
-
-        <span class="fabric">
-          Elige tu tela
-        </span>
-
-      </div>
-
-    </article>
+<div class="products">
 
 
-    <article class="product">
+<!-- BOLSO -->
 
-      <img
-        class="product-image"
-        src="Photoroom_20250611_131104.jpeg"
-        alt="Pack bebé Mon Impasse"
-      >
+<article class="product">
 
-      <div class="product-info">
+<img
+class="product-image"
+src="IMG_8310.jpeg"
+alt="Bolso tote Mon Impasse"
+>
 
-        <h3>Packs bebé</h3>
+<div class="product-info">
 
-        <p>
-          Detalles bonitos y funcionales
-          para los más pequeños.
-        </p>
+<h3>Bolso tote sencillo</h3>
 
-        <span class="fabric">
-          Elige tu tela
-        </span>
+<p>
+Un bolso práctico y especial,
+confeccionado a mano.
+</p>
 
-      </div>
+<div class="price">
+25 €
+</div>
 
-    </article>
+<div class="options">
 
+<span class="option">
+Elige tu tela
+</span>
 
-    <article class="product">
+<span class="option">
+Nombre +5 €
+</span>
 
-      <img
-        class="product-image"
-        src="Photoroom_20250623_161929.jpeg"
-        alt="Producto Mon Impasse"
-      >
+<span class="option">
+Inicial +3 €
+</span>
 
-      <div class="product-info">
+</div>
 
-        <h3>Mochilas</h3>
+</div>
 
-        <p>
-          Diseños únicos para acompañar
-          cada aventura.
-        </p>
-
-        <span class="fabric">
-          Elige tu tela
-        </span>
-
-      </div>
-
-    </article>
+</article>
 
 
-    <article class="product">
+<!-- NECESER GRANDE -->
 
-      <img
-        class="product-image"
-        src="23D60334-06E7-487A-9B65-81E7311500AF.png"
-        alt="Neceser Mon Impasse"
-      >
+<article class="product">
 
-      <div class="product-info">
+<img
+class="product-image"
+src="23D60334-06E7-487A-9B65-81E7311500AF.png"
+alt="Neceser grande Mon Impasse"
+>
 
-        <h3>Neceser</h3>
+<div class="product-info">
 
-        <p>
-          Piezas bonitas y prácticas
-          para llevar todo contigo.
-        </p>
+<h3>Neceser grande</h3>
 
-        <span class="fabric">
-          Elige tu tela
-        </span>
+<p>
+Espacioso y bonito para llevar
+todo lo que necesitas.
+</p>
 
-      </div>
+<div class="price">
+25 €
+</div>
 
-    </article>
+<div class="options">
 
+<span class="option">
+Elige tu tela
+</span>
 
-    <article class="product">
+<span class="option">
+Nombre +5 €
+</span>
 
-      <img
-        class="product-image"
-        src="3C5AFE69-450A-43BD-88A5-C5CD9377024E.png"
-        alt="Producto personalizado Mon Impasse"
-      >
+<span class="option">
+Inicial +3 €
+</span>
 
-      <div class="product-info">
+</div>
 
-        <h3>Personalizados</h3>
+<div class="custom-note">
+La impermeabilidad depende de la tela elegida.
+</div>
 
-        <p>
-          Elige tejidos, colores y detalles
-          para crear una pieza única.
-        </p>
+</div>
 
-        <span class="fabric">
-          Tela + nombre bordado
-        </span>
-
-      </div>
-
-    </article>
+</article>
 
 
-  </div>
+<!-- NECESER BASIC -->
+
+<article class="product">
+
+<img
+class="product-image"
+src="3C5AFE69-450A-43BD-88A5-C5CD9377024E.png"
+alt="Neceser basic Mon Impasse"
+>
+
+<div class="product-info">
+
+<h3>Neceser basic</h3>
+
+<p>
+Un diseño sencillo, práctico
+y hecho a mano.
+</p>
+
+<div class="price">
+20 €
+</div>
+
+<div class="options">
+
+<span class="option">
+Elige tu tela
+</span>
+
+<span class="option">
+Nombre +5 €
+</span>
+
+<span class="option">
+Inicial +3 €
+</span>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- BABERO -->
+
+<article class="product">
+
+<img
+class="product-image"
+src="Photoroom_20250623_161929.jpeg"
+alt="Babero Mon Impasse"
+>
+
+<div class="product-info">
+
+<h3>Babero</h3>
+
+<p>
+Un detalle bonito y funcional
+para los más pequeños.
+</p>
+
+<div class="price">
+10 €
+</div>
+
+<div class="options">
+
+<span class="option">
+Elige tu tela
+</span>
+
+<span class="option">
+Nombre +5 €
+</span>
+
+<span class="option">
+Inicial +3 €
+</span>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- PACK BEBÉ -->
+
+<article class="product">
+
+<img
+class="product-image"
+src="Photoroom_20250611_131104.jpeg"
+alt="Pack bebé Mon Impasse"
+>
+
+<div class="product-info">
+
+<h3>Pack bebé</h3>
+
+<p>
+Un pack especial y práctico
+para los más pequeños.
+</p>
+
+<div class="price">
+50 €
+</div>
+
+<div class="options">
+
+<span class="option">
+Elige tu tela
+</span>
+
+<span class="option">
+Nombre +5 €
+</span>
+
+<span class="option">
+Inicial +3 €
+</span>
+
+</div>
+
+</div>
+
+</article>
+
+
+</div>
 
 </section>
 
 
 <section class="about" id="nosotros">
 
-  <div class="about-content">
+<div class="about-content">
 
-    <h2>Detrás de Mon Impasse</h2>
+<h2>
+Detrás de Mon Impasse
+</h2>
 
-    <p>
-      Mon Impasse nace de la pasión por crear con las manos,
-      elegir cada tejido y cuidar cada pequeño detalle.
-    </p>
+<p>
+Mon Impasse nace de la pasión por crear con las manos,
+elegir cada tejido y cuidar cada pequeño detalle.
+</p>
 
-    <p>
-      Cada pieza se confecciona artesanalmente,
-      pensando en que sea bonita, práctica y especial.
-    </p>
-
-
-    <div class="values">
-
-      <div class="value">
-
-        <span>♡</span>
-
-        <h3>Hecho a mano</h3>
-
-        <p>
-          Cada pieza está confeccionada con mimo.
-        </p>
-
-      </div>
+<p>
+Cada pieza se confecciona artesanalmente,
+pensando en que sea bonita, práctica y especial.
+</p>
 
 
-      <div class="value">
+<div class="values">
 
-        <span>✦</span>
+<div class="value">
 
-        <h3>Único</h3>
+<span>♡</span>
 
-        <p>
-          Diseños y combinaciones para hacerlos tuyos.
-        </p>
+<h3>
+Hecho a mano
+</h3>
 
-      </div>
+<p>
+Cada pieza está confeccionada con mimo.
+</p>
+
+</div>
 
 
-      <div class="value">
+<div class="value">
 
-        <span>⌁</span>
+<span>✦</span>
 
-        <h3>Con cariño</h3>
+<h3>
+Único
+</h3>
 
-        <p>
-          Porque los pequeños detalles importan.
-        </p>
+<p>
+Diseños y combinaciones para hacerlos tuyos.
+</p>
 
-      </div>
+</div>
 
-    </div>
 
-  </div>
+<div class="value">
+
+<span>⌁</span>
+
+<h3>
+Con cariño
+</h3>
+
+<p>
+Porque los pequeños detalles importan.
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
 <section class="custom" id="personalizados">
 
-  <div class="custom-content">
+<div class="custom-content">
 
-    <h2>
-      ¿Lo quieres personalizado?
-    </h2>
+<h2>
+¿Lo quieres personalizado?
+</h2>
 
-    <p>
-      Podemos crear tu pieza eligiendo tejidos,
-      colores, estampados y nombre bordado.
-    </p>
+<p>
+Todos nuestros productos pueden confeccionarse
+en diferentes telas. Puedes añadir un nombre bordado
+por 5 € o una inicial por 3 €.
+</p>
 
-    <a
-      class="button"
-      href="https://www.instagram.com/mon.impasse/"
-      target="_blank"
-    >
-      Escríbeme por Instagram
-    </a>
+<a
+class="button"
+href="https://www.instagram.com/mon.impasse/"
+target="_blank"
+>
+Escríbeme por Instagram
+</a>
 
-  </div>
+</div>
 
 </section>
 
 
 <section class="instagram" id="contacto">
 
-  <div class="section-title">
+<div class="section-title">
 
-    <h2>
-      Nos vemos en Instagram
-    </h2>
+<h2>
+Nos vemos en Instagram
+</h2>
 
-    <p>
-      Descubre novedades, tejidos y nuevas creaciones.
-    </p>
+<p>
+Descubre novedades, tejidos y nuevas creaciones.
+</p>
 
-  </div>
+</div>
 
 
-  <div class="instagram-box">
+<div class="instagram-box">
 
-    <h2>Mon Impasse</h2>
+<h2>
+Mon Impasse
+</h2>
 
-    <div class="instagram-name">
-      @mon.impasse
-    </div>
+<div class="instagram-name">
+@mon.impasse
+</div>
 
-    <p>
-      Síguenos para descubrir las nuevas piezas
-      y todos los proyectos que vamos creando.
-    </p>
+<p>
+Síguenos para descubrir las nuevas piezas
+y todos los proyectos que vamos creando.
+</p>
 
-    <a
-      class="button"
-      href="https://www.instagram.com/mon.impasse/"
-      target="_blank"
-    >
-      Instagram
-    </a>
+<a
+class="button"
+href="https://www.instagram.com/mon.impasse/"
+target="_blank"
+>
+Instagram
+</a>
 
-  </div>
+</div>
 
 </section>
 
 
 <footer>
 
-  <div class="footer-logo">
-    Mon Impasse
-  </div>
+<div class="footer-logo">
+Mon Impasse
+</div>
 
-  <p>
-    Hecho a mano con cariño · © 2026 Mon Impasse
-  </p>
+<p>
+Hecho a mano con cariño · © 2026 Mon Impasse
+</p>
 
 </footer>
-
 
 </body>
 </html>
