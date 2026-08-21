@@ -3,96 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Mon Impasse | Producto</title>
-
+<title>Mon Impasse | Neceser S</title>
 <style>
-
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;color:#514943;background:#faf8f5;line-height:1.6}
+header{background:#fff;padding:20px;text-align:center;border-bottom:1px solid #eee6df}
+.logo{font-family:Georgia,serif;font-size:30px;letter-spacing:2px;color:#514943}
+.tagline{font-size:12px;letter-spacing:2px;color:#9a857a;margin-top:3px}
+.back{display:inline-block;margin-top:15px;color:#514943;text-decoration:none;font-size:14px}
+.product-page{max-width:1000px;margin:40px auto;padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.product-photo{width:100%;border-radius:20px;display:block;object-fit:cover;max-height:650px;background:#fff}
+.product-info{padding:10px 0}
+.product-info h1{font-family:Georgia,serif;font-size:42px;font-weight:normal;margin-bottom:15px}
+.description{font-size:16px;color:#756a64;margin-bottom:25px}
+.price{font-family:Georgia,serif;font-size:30px;margin-bottom:30px}
+.characteristics{border-top:1px solid #e8ded7;border-bottom:1px solid #e8ded7;padding:20px 0;margin-bottom:25px}
+.characteristics p{margin:7px 0;color:#756a64}
+.fabric-label{display:block;font-size:15px;font-weight:bold;margin-bottom:8px;color:#514943}
+.fabric-select{width:100%;padding:13px 14px;border:1px solid #d9cec6;border-radius:10px;background:#fff;color:#514943;font-size:16px;appearance:auto}
+.selected-fabric{margin-top:10px;font-size:14px;color:#9a857a}
+.note{font-size:14px;color:#756a64;margin-top:20px}
+@media(max-width:700px){.product-page{grid-template-columns:1fr;gap:25px;margin:20px auto}.product-info h1{font-size:34px}.product-photo{max-height:none}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Mon impasse</div>
+<div class="tagline">HECHO A MANO CON MUCHO CARIÑO</div>
+<a class="back" href="index.html">← Volver a la tienda</a>
+</header>
+<main class="product-page">
+<section>
+<img id="productPhoto" class="product-photo" src="1842F9C7-F1AB-478A-81F5-9A934840A969.png?v=2" alt="Neceser S - Perritos azul" loading="eager">
+</section>
+<section class="product-info">
+<h1>Neceser S</h1>
+<p class="description">Un neceser práctico y bonito, hecho a mano y disponible en diferentes estampados. Elige tu tela favorita.</p>
+<div class="price">15 €</div>
+<div class="characteristics">
+<p>✓ Hecho a mano</p>
+<p>✓ Cremallera superior</p>
+<p>✓ Diferentes telas a elegir</p>
+</div>
+<label class="fabric-label" for="fabricSelect">Elige tu tela</label>
+<select id="fabricSelect" class="fabric-select" aria-label="Elige la tela del neceser">
+<option value="perritos" data-image="1842F9C7-F1AB-478A-81F5-9A934840A969.png" data-name="Perritos azul">Perritos azul</option>
+<option value="flores" data-image="23D60334-06E7-487A-9B65-81E7311500AF.png" data-name="Flores azul">Flores azul</option>
+<option value="rayas" data-image="37AE8F00-7105-4271-B1BF-BF2501A64952.png" data-name="Rayas rosa y beige">Rayas rosa y beige</option>
+<option value="vichy-grande" data-image="3C5AFE69-450A-43BD-88A5-C5CD9377024E.png" data-name="Vichy gris grande">Vichy gris grande</option>
+<option value="vichy-pequeno" data-image="C0C87334-0E0A-441D-B9A7-0E1B4DE5EFB2.png" data-name="Vichy gris pequeño">Vichy gris pequeño</option>
+</select>
+<p id="selectedFabric" class="selected-fabric">Tela seleccionada: Perritos azul</p>
+<p class="note">Cada pieza se confecciona bajo pedido. El estampado puede variar ligeramente según el corte de la tela.</p>
+</section>
+</main>
+<script>
+const select=document.getElementById('fabricSelect');
+const photo=document.getElementById('productPhoto');
+const selectedFabric=document.getElementById('selectedFabric');
+function changeFabric(){
+ const option=select.options[select.selectedIndex];
+ const image=option.dataset.image;
+ const name=option.dataset.name;
+ photo.src=image+'?v=2';
+ photo.alt='Neceser S - '+name;
+ selectedFabric.textContent='Tela seleccionada: '+name;
 }
-
-body{
-font-family:Arial,sans-serif;
-color:#514943;
-background:#faf8f5;
-line-height:1.6;
-}
-
-header{
-background:#fff;
-padding:20px;
-text-align:center;
-border-bottom:1px solid #eee6df;
-}
-
-.logo{
-font-family:Georgia,serif;
-font-size:30px;
-letter-spacing:2px;
-color:#514943;
-}
-
-.tagline{
-font-size:12px;
-letter-spacing:2px;
-color:#9a857a;
-margin-top:3px;
-}
-
-.back{
-display:inline-block;
-margin-top:15px;
-color:#514943;
-text-decoration:none;
-font-size:14px;
-}
-
-.product-page{
-max-width:1000px;
-margin:50px auto;
-padding:20px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:start;
-}
-
-.product-photo{
-width:100%;
-border-radius:20px;
-display:block;
-object-fit:cover;
-max-height:650px;
-}
-
-.product-info{
-padding:10px 0;
-}
-
-.product-info h1{
-font-family:Georgia,serif;
-font-size:42px;
-font-weight:normal;
-margin-bottom:15px;
-}
-
-.description{
-font-size:16px;
-color:#756a64;
-margin-bottom:25px;
-}
-
-.price{
-font-family:Georgia,serif;
-font-size:30px;
-margin-bottom:30px;
-}
-
-.characteristics{
-border-top:1px solid #e8ded7;
-border-bottom:1px solid #e8ded7;
-padding:20px 0;
-margin-bottom:
+select.addEventListener('change',changeFabric);
+</script>
+</body>
+</html>
