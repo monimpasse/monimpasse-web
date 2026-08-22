@@ -1,0 +1,29 @@
+name: Decode totebag images
+on:
+  push:
+    paths:
+      - 'assets/*.b64'
+permissions:
+  contents: write
+jobs:
+  decode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Decode images
+        run: |
+          set -e
+          for f in assets/*.b64; do
+            [ -e "$f" ] || continue
+            out="${f%.b64}"
+            base64 -d "$f" > "$out"
+            rm "$f"
+          done
+      - name: Commit images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git diff --cached --quiet && exit 0
+          git commit -m "Decode totebag images"
+          git push
