@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mon Impasse | Hecho a mano</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;color:#514943;background:#faf8f5;line-height:1.6}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:Arial,sans-serif;color:#514943;background:#faf8f5;line-height:1.6}
 header{background:#fff;padding:22px 20px;text-align:center;border-bottom:1px solid #eee6df;position:sticky;top:0;z-index:10}
 .logo{font-family:Georgia,serif;font-size:32px;letter-spacing:2px}.tagline{font-size:12px;letter-spacing:2px;color:#9a857a;margin-top:4px}
 nav{margin-top:14px}nav a{color:#514943;text-decoration:none;margin:0 8px;font-size:14px}
@@ -30,7 +29,13 @@ footer{background:#514943;color:#fff;text-align:center;padding:35px 20px}.footer
 <footer><div class="footer-logo">Mon Impasse</div><p>Hecho a mano con cariño · © 2026 Mon Impasse</p></footer>
 <div class="modal" id="modal"><div class="modal-box"><button class="close" onclick="closeProduct()">×</button><div class="modal-grid"><section><img id="modal-image" class="modal-image" src="" alt=""></section><section class="modal-info"><h2 id="modal-name"></h2><p id="modal-description"></p><div id="modal-price" class="modal-price"></div><label class="fabric-label" for="fabric">Elige tu tela</label><select id="fabric" class="fabric-select" onchange="changeFabric()"></select><p id="note" class="note">Cada pieza se confecciona bajo pedido.</p></section></div></div></div>
 <script>
-const standardFabrics=[['Perritos marineros','assets/594B737C-1928-4FA1-AE01-AA2ECD57718B.png'],['Flores azules','assets/37AE8F00-7105-4271-B1BF-BF2501A64952.png'],['Rayas rosa y beige','assets/ED6FEB98-3FBE-44C0-9E4A-EA0A55CFA1F3.png'],['Vichy gris','assets/C0C87334-0E0A-441D-B9A7-0E1B4DE5EFB2.png'],['Vichy negro','assets/B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png']];
+const standardFabrics=[
+['Vichy negro','assets/B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png'],
+['Flores azules','assets/ABBC2D5C-6666-4AA6-A835-C50142602803.png'],
+['Perros marineros','assets/594B737C-1928-4FA1-AE01-AA2ECD57718B.png'],
+['Animal print marrón','assets/1B3B20ED-BCA8-4291-8FD2-3B8D52C6595D.png'],
+['Floral lila','assets/E5AA1D38-4BE0-49C5-877B-93C78F839C79.png']
+];
 const basicFabrics=[['Perritos marineros','assets/594B737C-1928-4FA1-AE01-AA2ECD57718B.png'],['Animal print azul','assets/ABBC2D5C-6666-4AA6-A835-C50142602803.png'],['Vichy negro','assets/B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png'],['Floral lila','assets/E5AA1D38-4BE0-49C5-877B-93C78F839C79.png'],['Animal print marrón','assets/1B3B20ED-BCA8-4291-8FD2-3B8D52C6595D.png']];
 const totebagFabrics=[['Perros marineros','assets/1A66E052-EF57-4A08-8DAD-6E2E88812AA3.png'],['Animal print lila','assets/19D97C3D-68DE-4F0D-9613-CA77525FC15F.png'],['Animal print marrón','assets/5EA4AA7B-48EF-4F9C-97A9-8E0A87D27CB6.png'],['Animal print azul','assets/1B1B2CDA-540F-4D12-ABA9-996FECEE8FC8.png'],['Vichy negro','assets/8CCC90A3-9263-44CC-BB5F-BB31EAB258DC.png']];
 const bibFabrics=[['Perritos marineros','6083EF3A-6459-4734-B4B9-42502522F1EB.png'],['Avionetas fondo blanco','558EE6C4-C23E-4327-8E60-269D6CC8B501.png'],['Perritos rosa','927E82D1-AC54-4A7B-A7F9-FE051D964D6E.png'],['Perritos azul claro','90A6C050-2F35-4CC7-BD77-1624B896D29A.png'],['Hipopótamos rosa','0AA88434-7DB8-42AE-A699-75E4C53C092F.png']];
