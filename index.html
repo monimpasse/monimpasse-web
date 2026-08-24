@@ -1,1 +1,46 @@
-<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Mon Impasse | Hecho a mano</title></head><body><h1>Mon Impasse</h1></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Impasse | Hecho a mano</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;color:#514943;background:#faf8f5;line-height:1.6}
+header{background:#fff;padding:30px 20px;text-align:center;border-bottom:1px solid #eee6df}
+.logo{font-family:Georgia,serif;font-size:42px;letter-spacing:1px;color:#514943}
+.tagline{font-size:12px;letter-spacing:2px;color:#9a857a;margin-top:5px}
+main{max-width:1100px;margin:45px auto;padding:0 20px}
+h2{font-family:Georgia,serif;font-size:34px;font-weight:normal;text-align:center;margin-bottom:35px}
+.products{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+.card{background:#fff;border:1px solid #eee6df;border-radius:18px;overflow:hidden;text-decoration:none;color:#514943;box-shadow:0 4px 18px rgba(81,73,67,.06)}
+.card img{width:100%;height:380px;object-fit:cover;display:block;background:#fff}
+.card-info{padding:22px;text-align:center}
+.card h3{font-family:Georgia,serif;font-size:28px;font-weight:normal;margin-bottom:7px}
+.card p{color:#756a64;font-size:15px}
+.price{font-family:Georgia,serif;font-size:22px;margin-top:10px}
+footer{text-align:center;padding:45px 20px;color:#9a857a;font-size:13px}
+@media(max-width:700px){.products{grid-template-columns:1fr}.card img{height:320px}.logo{font-size:34px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Mon Impasse</div>
+<div class="tagline">HECHO A MANO CON MUCHO CARIÑO</div>
+</header>
+<main>
+<h2>Neceser</h2>
+<div class="products">
+<a class="card" href="Producto.html">
+<img src="B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png?v=3" alt="Neceser S Vichy negro">
+<div class="card-info"><h3>Neceser S</h3><p>Pequeño, práctico y hecho a mano</p><div class="price">15 €</div></div>
+</a>
+<a class="card" href="Producto-Basic.html">
+<img src="B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png?v=3" alt="Neceser Basic Vichy negro">
+<div class="card-info"><h3>Neceser Basic</h3><p>Espacioso, práctico y hecho a mano</p><div class="price">18 €</div></div>
+</a>
+</div>
+</main>
+<footer>Mon Impasse · Hecho a mano</footer>
+</body>
+</html>
