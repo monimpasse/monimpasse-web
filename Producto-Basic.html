@@ -33,11 +33,11 @@ header{background:#fff;padding:20px;text-align:center;border-bottom:1px solid #e
 <a class="back" href="index.html">← Volver a la tienda</a>
 </header>
 <main class="product-page">
-<section><img id="productPhoto" class="product-photo" src="assets/B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png?v=3" alt="Neceser Basic - Vichy negro" loading="eager"></section>
+<section><img id="productPhoto" class="product-photo" src="assets/B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png?v=4" alt="Neceser Basic - Vichy negro" loading="eager"></section>
 <section class="product-info">
 <h1>Neceser Basic</h1>
 <p class="description">Un neceser amplio y práctico, hecho a mano y disponible en diferentes telas. Elige tu favorita.</p>
-<div class="price">18 €</div>
+<div class="price">20 €</div>
 <div class="characteristics"><p>✓ Hecho a mano</p><p>✓ Cremallera superior</p><p>✓ Diferentes telas a elegir</p></div>
 <label class="fabric-label" for="fabricSelect">Elige tu tela</label>
 <select id="fabricSelect" class="fabric-select" aria-label="Elige la tela del neceser">
@@ -55,7 +55,7 @@ header{background:#fff;padding:20px;text-align:center;border-bottom:1px solid #e
 const select=document.getElementById('fabricSelect');
 const photo=document.getElementById('productPhoto');
 const selectedFabric=document.getElementById('selectedFabric');
-select.addEventListener('change',()=>{const o=select.options[select.selectedIndex];photo.src=o.dataset.image+'?v=3';photo.alt='Neceser Basic - '+o.dataset.name;selectedFabric.textContent='Tela seleccionada: '+o.dataset.name;});
+select.addEventListener('change',()=>{const o=select.options[select.selectedIndex];photo.src=o.dataset.image+'?v=4';photo.alt='Neceser Basic - '+o.dataset.name;selectedFabric.textContent='Tela seleccionada: '+o.dataset.name;});
 </script>
 </body>
 </html>
