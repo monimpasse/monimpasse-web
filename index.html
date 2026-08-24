@@ -7,40 +7,47 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:Arial,sans-serif;color:#514943;background:#faf8f5;line-height:1.6}
-header{background:#fff;padding:30px 20px;text-align:center;border-bottom:1px solid #eee6df}
-.logo{font-family:Georgia,serif;font-size:42px;letter-spacing:1px;color:#514943}
-.tagline{font-size:12px;letter-spacing:2px;color:#9a857a;margin-top:5px}
-main{max-width:1100px;margin:45px auto;padding:0 20px}
-h2{font-family:Georgia,serif;font-size:34px;font-weight:normal;text-align:center;margin-bottom:35px}
-.products{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
-.card{background:#fff;border:1px solid #eee6df;border-radius:18px;overflow:hidden;text-decoration:none;color:#514943;box-shadow:0 4px 18px rgba(81,73,67,.06)}
-.card img{width:100%;height:380px;object-fit:cover;display:block;background:#fff}
-.card-info{padding:22px;text-align:center}
-.card h3{font-family:Georgia,serif;font-size:28px;font-weight:normal;margin-bottom:7px}
-.card p{color:#756a64;font-size:15px}
-.price{font-family:Georgia,serif;font-size:22px;margin-top:10px}
-footer{text-align:center;padding:45px 20px;color:#9a857a;font-size:13px}
-@media(max-width:700px){.products{grid-template-columns:1fr}.card img{height:320px}.logo{font-size:34px}}
+header{background:#fff;padding:22px 20px;text-align:center;border-bottom:1px solid #eee6df;position:sticky;top:0;z-index:10}
+.logo{font-family:Georgia,serif;font-size:32px;letter-spacing:2px}
+.tagline{font-size:12px;letter-spacing:2px;color:#9a857a;margin-top:4px}
+nav{margin-top:14px}nav a{color:#514943;text-decoration:none;margin:0 8px;font-size:14px}
+.hero{text-align:center;padding:75px 20px 65px;background:#fff}
+.hero h1{font-family:Georgia,serif;font-size:clamp(44px,8vw,72px);font-weight:normal;margin-bottom:12px}
+.hero p{font-size:18px;color:#756a64;margin-bottom:25px}
+.button{display:inline-block;background:#514943;color:#fff;text-decoration:none;padding:12px 25px;border-radius:30px;border:0;cursor:pointer;font-size:14px}
+section{padding:65px 18px}.section-title{text-align:center;margin-bottom:35px}.section-title h2{font-family:Georgia,serif;font-size:36px;font-weight:normal}.section-title p{color:#8d8179;margin-top:7px}
+.products{max-width:1100px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:25px}
+.product{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 5px 20px rgba(70,55,45,.07)}
+.product-image{width:100%;height:290px;object-fit:contain;background:#fff;padding:8px;display:block;cursor:pointer}
+.product-info{padding:20px}.product h3{font-family:Georgia,serif;font-size:22px;font-weight:normal;margin-bottom:7px}.product-info p{font-size:14px;color:#776d67;margin-bottom:12px}.price{font-family:Georgia,serif;font-size:22px;margin:8px 0 14px}.view-product{width:100%}
+.about{text-align:center;background:#fff}.about-content{max-width:850px;margin:auto}.about h2,.custom h2{font-family:Georgia,serif;font-size:36px;font-weight:normal;margin-bottom:18px}.about p{color:#706660;font-size:17px;margin-bottom:15px}
+.custom{text-align:center;background:#eee5df}.custom-content{max-width:700px;margin:auto}.custom p{margin-bottom:24px;color:#6f645e}
+.instagram{text-align:center}.instagram-box{max-width:650px;margin:auto;background:#fff;padding:35px 25px;border-radius:20px}
+footer{background:#514943;color:#fff;text-align:center;padding:35px 20px}.footer-logo{font-family:Georgia,serif;font-size:27px}
+@media(max-width:600px){.logo{font-size:27px}nav a{font-size:12px;margin:0 4px}.hero{padding:60px 18px}.section-title h2,.about h2,.custom h2{font-size:31px}.products{grid-template-columns:1fr}.product-image{height:300px}}
 </style>
 </head>
 <body>
 <header>
 <div class="logo">Mon Impasse</div>
-<div class="tagline">HECHO A MANO CON MUCHO CARIÑO</div>
+<div class="tagline">HECHO A MANO · CON CARIÑO</div>
+<nav><a href="#inicio">Inicio</a><a href="#productos">Productos</a><a href="#nosotros">Nosotros</a><a href="#personalizados">Personalizados</a><a href="#contacto">Contacto</a></nav>
 </header>
-<main>
-<h2>Neceser</h2>
+<section class="hero" id="inicio">
+<h1>Mon Impasse</h1>
+<p>Pequeñas cosas hechas a mano para hacer cada día un poquito más especial.</p>
+<a class="button" href="#productos">Descubrir la colección</a>
+</section>
+<section id="productos">
+<div class="section-title"><h2>Hecho para ti</h2><p>Piezas artesanales pensadas para acompañarte.</p></div>
 <div class="products">
-<a class="card" href="Producto.html">
-<img src="assets/B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png?v=4" alt="Neceser S Vichy negro">
-<div class="card-info"><h3>Neceser S</h3><p>Pequeño, práctico y hecho a mano</p><div class="price">15 €</div></div>
-</a>
-<a class="card" href="Producto-Basic.html">
-<img src="assets/B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png?v=4" alt="Neceser Basic Vichy negro">
-<div class="card-info"><h3>Neceser Basic</h3><p>Espacioso, práctico y hecho a mano</p><div class="price">18 €</div></div>
-</a>
+<article class="product"><a href="Producto.html"><img class="product-image" src="assets/B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png?v=8" alt="Neceser S Vichy negro"></a><div class="product-info"><h3>Neceser S</h3><p>Un neceser pequeño, práctico y bonito.</p><div class="price">15 €</div><a class="button view-product" href="Producto.html">Ver producto</a></div></article>
+<article class="product"><a href="Producto-Basic.html"><img class="product-image" src="assets/B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png?v=8" alt="Neceser Basic Vichy negro"></a><div class="product-info"><h3>Neceser Basic</h3><p>Un neceser amplio, práctico y hecho a mano.</p><div class="price">18 €</div><a class="button view-product" href="Producto-Basic.html">Ver producto</a></div></article>
 </div>
-</main>
-<footer>Mon Impasse · Hecho a mano</footer>
+</section>
+<section class="about" id="nosotros"><div class="about-content"><h2>Detrás de Mon Impasse</h2><p>Mon Impasse nace de la pasión por crear con las manos, elegir cada tejido y cuidar cada pequeño detalle.</p><p>Cada pieza se confecciona artesanalmente, pensando en que sea bonita, práctica y especial.</p></div></section>
+<section class="custom" id="personalizados"><div class="custom-content"><h2>¿Lo quieres personalizado?</h2><p>Todos nuestros productos pueden confeccionarse en diferentes telas. Puedes añadir un nombre bordado por 5 € o una inicial por 3 €.</p><a class="button" href="https://www.instagram.com/mon.impasse/" target="_blank">Escríbeme por Instagram</a></div></section>
+<section class="instagram" id="contacto"><div class="section-title"><h2>Nos vemos en Instagram</h2><p>Descubre novedades, tejidos y nuevas creaciones.</p></div><div class="instagram-box"><h2>Mon Impasse</h2><p>@mon.impasse</p><br><a class="button" href="https://www.instagram.com/mon.impasse/" target="_blank">Instagram</a></div></section>
+<footer><div class="footer-logo">Mon Impasse</div><p>Hecho a mano con cariño · © 2026 Mon Impasse</p></footer>
 </body>
 </html>
