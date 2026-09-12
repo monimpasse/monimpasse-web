@@ -17,7 +17,9 @@ nav a{color:#191716;text-decoration:none;margin-right:28px;font-size:12px;letter
 .header-actions{position:absolute;right:42px;bottom:29px;display:flex;gap:20px;align-items:center}
 .header-icon{border:0;background:none;font-size:23px;cursor:pointer;color:#111}
 .cart-count{display:inline-flex;background:#cbb8ac;color:#fff;border-radius:50%;min-width:20px;height:20px;align-items:center;justify-content:center;font-size:11px;margin-left:-8px;vertical-align:top}
-.hero{min-height:610px;display:grid;grid-template-columns:42% 58%;align-items:center;background:linear-gradient(115deg,#e9ded5 0%,#f1e8e1 55%,#e6dcd4 100%);overflow:hidden}
+.hero{width:100%;overflow:hidden;background:#eee5dd}
+.hero-image-link{display:block;width:100%;line-height:0}
+.hero-main-image{display:block;width:100%;height:auto;max-height:620px;object-fit:cover;object-position:center}
 .hero-copy{padding:55px 30px 55px 7vw;position:relative;z-index:2}
 .hero-copy h1{font-family:Georgia,serif;font-size:clamp(44px,5.2vw,72px);font-weight:400;line-height:1.03;color:#26211f;margin-bottom:25px;letter-spacing:-1.5px}
 .hero-copy p{font-size:13px;letter-spacing:3px;line-height:2;color:#4d4641;max-width:410px;margin-bottom:30px;text-transform:uppercase}
@@ -108,15 +110,9 @@ section{padding:52px 18px}.category-grid{grid-template-columns:1fr}.products{gri
 </header>
 
 <section class="hero" id="inicio">
-  <div class="hero-copy">
-    <h1>Bolsas que<br>te acompañan</h1>
-    <p>DISEÑADAS PARA HACER<br>TU DÍA MÁS FÁCIL</p>
-    <a class="button" href="catalogo.html">Descubrir</a>
-  </div>
-  <div class="hero-products">
-    <img class="hero-bag" src="assets/8CCC90A3-9263-44CC-BB5F-BB31EAB258DC.png" alt="Bolsa Mon Impasse">
-    <img class="hero-basic" src="assets/B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png" alt="Neceser Basic Mon Impasse">
-  </div>
+  <a class="hero-image-link" href="catalogo.html" aria-label="Descubrir productos Mon Impasse">
+    <img class="hero-main-image" src="assets/monimpasse-hero.jpg" alt="Bolsa y neceser Mon Impasse en un ambiente cálido y acogedor">
+  </a>
 </section>
 
 <div class="feature-strip">
