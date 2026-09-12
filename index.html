@@ -27,6 +27,7 @@ nav a{color:#191716;text-decoration:none;margin-right:28px;font-size:12px;letter
 .hero-basic{position:absolute;width:34%;left:6%;bottom:8%;z-index:3;filter:drop-shadow(0 13px 13px rgba(60,45,35,.18))}
 .feature-strip{background:#fff;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:27px 7%;border-bottom:1px solid #eee6df}
 .feature{text-align:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#2f2a27}
+.feature-icon{width:34px;height:34px;margin:0 auto 9px;display:block;fill:none;stroke:#171412;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .feature strong{display:block;font-size:20px;font-weight:400;margin-bottom:6px}
 section{padding:70px 7%}
 .section-title{text-align:center;margin-bottom:42px}
@@ -88,7 +89,7 @@ footer{background:#332e2b;color:#fff;text-align:center;padding:35px 20px}
 @media(max-width:850px){
 header{padding-bottom:15px}.logo{font-size:43px}.tagline{font-size:8px;letter-spacing:2.5px}nav{position:static;margin-top:16px}nav a{margin:0 7px;font-size:9px;letter-spacing:1.5px}.header-actions{right:15px;top:17px;bottom:auto}.hero{grid-template-columns:1fr;min-height:0}.hero-copy{padding:55px 30px 30px}.hero-copy h1{font-size:48px}.hero-products{height:430px}.hero-bag{width:66%;right:7%;bottom:8%}.hero-basic{width:35%;left:5%;bottom:8%}.feature-strip{grid-template-columns:repeat(2,1fr);gap:25px}.category-grid{grid-template-columns:1fr 1fr}.products{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){
-section{padding:52px 18px}.category-grid{grid-template-columns:1fr}.products{grid-template-columns:1fr}.hero-products{height:330px}.hero-copy h1{font-size:42px}.hero-copy p{font-size:10px;letter-spacing:2px}.feature-strip{padding:22px 12px}.feature{font-size:8px;letter-spacing:1px}.section-title h2{font-size:32px}}
+section{padding:52px 18px}.category-grid{grid-template-columns:1fr}.products{grid-template-columns:1fr}.hero-products{height:330px}.hero-copy h1{font-size:42px}.hero-copy p{font-size:10px;letter-spacing:2px}.feature-strip{padding:22px 12px}.feature{font-size:8px;letter-spacing:1px}.feature-icon{width:30px;height:30px;margin-bottom:7px}.section-title h2{font-size:32px}}
 </style>
 </head>
 <body>
@@ -117,10 +118,22 @@ section{padding:52px 18px}.category-grid{grid-template-columns:1fr}.products{gri
 </section>
 
 <div class="feature-strip">
-  <div class="feature"><strong>♡</strong>Hecho a mano<br>con cariño</div>
-  <div class="feature"><strong>♧</strong>Envíos a toda<br>España</div>
-  <div class="feature"><strong>⌁</strong>Materiales de<br>calidad</div>
-  <div class="feature"><strong>♢</strong>Detalles que<br>hacen especial cada día</div>
+  <div class="feature">
+    <svg class="feature-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 27S4.5 20.3 4.5 11.7A6.2 6.2 0 0 1 16 8.9a6.2 6.2 0 0 1 11.5 2.8C27.5 20.3 16 27 16 27Z"/></svg>
+    Hecho a mano<br>con cariño
+  </div>
+  <div class="feature">
+    <svg class="feature-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 8h17v15H3zM20 13h5l4 5v5h-9zM8 26a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM25 26a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+    Envíos a toda<br>España
+  </div>
+  <div class="feature">
+    <svg class="feature-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M27 5C15 5 8 10 6 18c-1 4 1 7 4 9M27 5c-1 10-5 17-12 19-3 1-6 0-8-2M27 5 13 19"/></svg>
+    Materiales de<br>calidad
+  </div>
+  <div class="feature">
+    <svg class="feature-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4v6M4 10h24v18H4zM4 16h24M16 10v18M16 10c-4 0-8-2-8-5 0-2 2-3 4-2 3 1 4 4 4 7ZM16 10c4 0 8-2 8-5 0-2-2-3-4-2-3 1-4 4-4 7Z"/></svg>
+    Detalles que<br>hacen especial cada día
+  </div>
 </div>
 
 <section id="productos">
