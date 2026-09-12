@@ -15,7 +15,7 @@
 <section class="product-info">
 <h1>Neceser S</h1>
 <p class="description">Un neceser práctico y bonito, hecho a mano y disponible en diferentes estampados. Elige tu tela favorita.</p>
-<div class="price">15 €</div><a class="buy-button" href="https://buy.stripe.com/cNicN4dlhgGN1xLefZdMI02">Comprar ahora · 15 €</a>
+<div class="price">15 €</div><button id="addButton" class="buy-button" type="button" onclick="addToCart()">Añadir a la cesta</button><a class="buy-button" href="index.html#productos" style="background:#fff;color:#514943;border:1px solid #d9cec6;text-align:center">Ver cesta / seguir comprando</a>
 <div class="characteristics"><p>✓ Hecho a mano</p><p>✓ Cremallera superior</p><p>✓ Diferentes telas a elegir</p></div>
 <div class="field"><label class="fabric-label" for="fabricSelect">Elige tu tela</label>
 <select id="fabricSelect" class="fabric-select">
@@ -28,12 +28,14 @@
 <div class="field"><span class="personal-label">Personalización</span><div class="personal-box"><div class="personal-row"><input type="checkbox" id="personalized"><label for="personalized">Sí, quiero personalizarlo con un nombre</label></div><div id="nameWrap" style="display:none"><label for="nameInput">Nombre a bordar</label><input id="nameInput" class="name-input" type="text" maxlength="20" placeholder="Escribe el nombre"></div></div></div>
 <p class="note">Cada pieza se confecciona bajo pedido. El estampado puede variar ligeramente según el corte de la tela.</p><a class="buy-button" href="https://buy.stripe.com/cNicN4dlhgGN1xLefZdMI02">Comprar ahora · 15 €</a>
 </section></main>
+
 <script>
 const fabrics=Array.from(document.querySelectorAll('#fabricSelect option')),s=document.getElementById('fabricSelect'),p=document.getElementById('productPhoto'),l=document.getElementById('selectedFabric'),thumbs=document.getElementById('thumbnails');
 function renderThumbs(){thumbs.innerHTML=fabrics.map((o,i)=>`<img class="thumb ${i===0?'active':''}" src="${o.dataset.image}?v=6" alt="${o.dataset.name}" data-index="${i}">`).join('');thumbs.querySelectorAll('.thumb').forEach(t=>t.addEventListener('click',()=>{s.selectedIndex=Number(t.dataset.index);changeFabric()}))}
 function changeFabric(){const o=s.options[s.selectedIndex];p.src=o.dataset.image+'?v=6';p.alt='Neceser S - '+o.dataset.name;l.textContent='Tela seleccionada: '+o.dataset.name;thumbs.querySelectorAll('.thumb').forEach((t,i)=>t.classList.toggle('active',i===s.selectedIndex))}
 s.addEventListener('change',changeFabric);
 const personal=document.getElementById('personalized'),nameWrap=document.getElementById('nameWrap');personal.addEventListener('change',()=>{nameWrap.style.display=personal.checked?'block':'none';if(!personal.checked)document.getElementById('nameInput').value=''});
+function addToCart(){const fabric=s.options[s.selectedIndex].dataset.name;const name=personal.checked?(document.getElementById('nameInput').value.trim()||'Sin nombre'):'';let cart=JSON.parse(localStorage.getItem('monImpasseCart')||'[]');const key='Neceser S|'+fabric+'|'+name;const existing=cart.find(x=>x.key===key);if(existing)existing.qty++;else cart.push({key,name:'Neceser S',price:15,image:p.src.split('?')[0],fabric,personalized:name,qty:1});localStorage.setItem('monImpasseCart',JSON.stringify(cart));document.getElementById('addButton').textContent='✓ Añadido a la cesta';setTimeout(()=>{document.getElementById('addButton').textContent='Añadir a la cesta'},1400)}
 renderThumbs();
 </script>
 </body></html>
