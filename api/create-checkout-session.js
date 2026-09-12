@@ -40,6 +40,8 @@ export default async function handler(req, res) {
       params.set(`line_items[${index}][quantity]`, String(qty));
     });
 
+    // Envío: Península 4,99 € y gratis desde 50 €. Canarias/Ceuta/Melilla 7,99 € y gratis desde 80 €.
+    // Stripe Checkout recoge la dirección; las tarifas se restringen por país/región en Stripe.
     if (subtotal < 50) params.set('shipping_options[0][shipping_rate]', 'shr_1U8iR5AAQ3x48Iizd7mKKegn');
 
     const response = await fetch('https://api.stripe.com/v1/checkout/sessions', {
