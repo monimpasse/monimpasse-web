@@ -10,10 +10,9 @@
 <header><div class="logo">Mon Impasse</div><div class="tagline">HECHO A MANO CON MUCHO CARIÑO</div><a class="back" href="catalogo.html">← Volver al catálogo</a></header>
 <main class="product-page">
 <section><img id="productPhoto" class="product-photo" src="" alt="" loading="eager"><div class="thumbnails" id="thumbnails"></div></section>
-<section class="product-info"><h1 id="productName"></h1><p id="description" class="description"></p><div id="price" class="price"></div>
+<section class="product-info"><h1 id="productName"></h1><p id="description" class="description"></p><div id="characteristics" class="characteristics"></div><div id="price" class="price"></div>
 <div class="field"><label class="fabric-label" for="fabricSelect">Elige tu tela</label><select id="fabricSelect" class="fabric-select"></select></div>
 <div id="personalArea"></div><button id="addButton" class="buy-button" type="button" onclick="addToCart()">Añadir a la cesta</button>
-<div class="characteristics"><p>✓ Hecho a mano</p><p>✓ Diferentes telas a elegir</p><p>✓ Cada pieza se confecciona bajo pedido</p></div>
 <p class="note">El estampado puede variar ligeramente según el corte de la tela.</p></section></main>
 <script>
 const standardFabrics=[['Animal print lila','6D28E075-B225-4C12-9754-C0A3B697CF41.png'],['Animal print marrón','BDC93116-C83D-40A4-8C72-ABDC236857A1.png'],['Perritos azul','C3748FB5-B11E-4675-B1C0-51BE4D333829.png'],['Animal print azul','37AE8F00-7105-4271-B1BF-BF2501A64952.png'],['Vichy gris grande','C0C87334-0E0A-441D-B9A7-0E1B4DE5EFB2.png']];
@@ -21,13 +20,13 @@ const basicFabrics=[['Perritos marineros','assets/594B737C-1928-4FA1-AE01-AA2ECD
 const totebagFabrics=[['Perros marineros','assets/1A66E052-EF57-4A08-8DAD-6E2E88812AA3.png'],['Animal print lila','assets/19D97C3D-68DE-4F0D-9613-CA77525FC15F.png'],['Animal print marrón','assets/5EA4AA7B-48EF-4F9C-97A9-8E0A87D27CB6.png'],['Animal print azul','assets/1B1B2CDA-540F-4D12-ABA9-996FECEE8FC8.png'],['Vichy negro','assets/8CCC90A3-9263-44CC-BB5F-BB31EAB258DC.png']];
 const bibFabrics=[['Perritos marineros','6083EF3A-6459-4734-B4B9-42502522F1EB.png'],['Avionetas fondo blanco','558EE6C4-C23E-4327-8E60-269D6CC8B501.png'],['Perritos rosa','927E82D1-AC54-4A7B-A7F9-FE051D964D6E.png'],['Perritos azul claro','90A6C050-2F35-4CC7-BD77-1624B896D29A.png'],['Hipopótamos rosa','0AA88434-7DB8-42AE-A699-75E4C53C092F.png']];
 const products=[
-{name:'Bolsa',price:25,image:'assets/8CCC90A3-9263-44CC-BB5F-BB31EAB258DC.png',description:'Una bolsa práctica y especial, confeccionada a mano.',fabrics:totebagFabrics,personal:true},
-{name:'Neceser S',price:15,image:'BDC93116-C83D-40A4-8C72-ABDC236857A1.png',description:'Un neceser pequeño, práctico y bonito, ideal para llevar tus imprescindibles.',fabrics:standardFabrics,personal:true},
-{name:'Neceser Basic',price:20,image:'assets/B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png',description:'Un diseño espacioso, práctico y hecho a mano.',fabrics:basicFabrics},
-{name:'Babero',price:10,image:'927E82D1-AC54-4A7B-A7F9-FE051D964D6E.png',description:'Babero artesanal, disponible en diferentes estampados y tejidos.',fabrics:bibFabrics,personal:true}];
+{name:'Bolsa',price:25,image:'assets/8CCC90A3-9263-44CC-BB5F-BB31EAB258DC.png',description:'Una bolsa práctica y especial, confeccionada a mano.',fabrics:totebagFabrics,personal:true,characteristics:['Estampado en tela impermeable','Hecha a mano','Cada pieza se confecciona bajo pedido']},
+{name:'Neceser S',price:15,image:'BDC93116-C83D-40A4-8C72-ABDC236857A1.png',description:'Un neceser pequeño, práctico y bonito, ideal para llevar tus imprescindibles.',fabrics:standardFabrics,personal:true,characteristics:['Tela impermeable','Hecho a mano','Cada pieza se confecciona bajo pedido']},
+{name:'Neceser Basic',price:20,image:'assets/B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png',description:'Un diseño espacioso, práctico y hecho a mano.',fabrics:basicFabrics,characteristics:['Tela impermeable','Hecho a mano','Cada pieza se confecciona bajo pedido']},
+{name:'Babero',price:10,image:'927E82D1-AC54-4A7B-A7F9-FE051D964D6E.png',description:'Babero artesanal, disponible en diferentes estampados y tejidos.',fabrics:bibFabrics,personal:true,characteristics:['Parte delantera de tela impermeable','Parte trasera de tela de rizo','Hecho a mano','Diferentes estampados disponibles'] }];
 const i=Math.max(0,Math.min(products.length-1,Number(new URLSearchParams(location.search).get('producto'))||0)),current=products[i];
 const photo=document.getElementById('productPhoto'),select=document.getElementById('fabricSelect'),thumbs=document.getElementById('thumbnails');
-document.title='Mon Impasse | '+current.name;document.getElementById('productName').textContent=current.name;document.getElementById('description').textContent=current.description;document.getElementById('price').textContent=current.price+' €';photo.src=current.image;photo.alt=current.name;
+document.title='Mon Impasse | '+current.name;document.getElementById('productName').textContent=current.name;document.getElementById('description').textContent=current.description;document.getElementById('characteristics').innerHTML=current.characteristics.map(x=>'<p>✓ '+x+'</p>').join('');document.getElementById('price').textContent=current.price+' €';photo.src=current.image;photo.alt=current.name;
 select.innerHTML=current.fabrics.map(x=>'<option value="'+x[0]+'" data-image="'+x[1]+'">'+x[0]+'</option>').join('');
 thumbs.innerHTML=current.fabrics.map((x,j)=>'<img class="thumb '+(j===0?'active':'')+'" src="'+x[1]+'?v=12" alt="'+x[0]+'" onclick="selectFabric('+j+')">').join('');
 function selectFabric(j){select.selectedIndex=j;changeFabric()}function changeFabric(){const o=select.options[select.selectedIndex];photo.src=o.dataset.image+'?v=12';photo.alt=current.name+' - '+o.value;document.querySelectorAll('.thumb').forEach((t,j)=>t.classList.toggle('active',j===select.selectedIndex))}
