@@ -36,13 +36,13 @@ select.innerHTML=current.fabrics.map((x,j)=>'<option value="'+x.name+'" data-ind
 function renderFabricGallery(j){
   const fabric=current.fabrics[j];
   const images=fabric.images||[fabric.image];
-  photo.src=images[0]+'?v=15';
+  photo.src=images[0]+'?v=16';
   photo.alt=current.name+' - '+fabric.name;
-  thumbs.innerHTML=images.map((src,k)=>'<img class="thumb '+(k===0?'active':'')+'" src="'+src+'?v=15" alt="'+fabric.name+' - foto '+(k+1)+'" onclick="selectGalleryImage('+k+')">').join('');
+  thumbs.innerHTML=images.map((src,k)=>'<img class="thumb '+(k===0?'active':'')+'" src="'+src+'?v=16" alt="'+fabric.name+' - foto '+(k+1)+'" onclick="selectGalleryImage('+k+')">').join('');
 }
 function selectGalleryImage(k){
   const images=current.fabrics[select.selectedIndex].images;
-  photo.src=images[k]+'?v=15';
+  photo.src=images[k]+'?v=16';
   photo.alt=current.name+' - '+current.fabrics[select.selectedIndex].name;
   document.querySelectorAll('.thumb').forEach((t,j)=>t.classList.toggle('active',j===k));
 }
