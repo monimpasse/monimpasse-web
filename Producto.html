@@ -27,7 +27,7 @@ const products=[
 {name:'Lila animal print',images:['assets/B30D5DEC-4941-4A0D-BA24-58F386CA413E.jpeg','assets/912731BA-8A72-4B42-B24F-E250207A5F6A.png']},
 {name:'Turquesa animal print',images:['assets/D3005FCC-491D-4CCA-B118-D392A2FA6E59.jpeg','assets/A9770395-0D6C-48A7-B578-A2987397AF39.png']},
 {name:'Azul animal print',images:['assets/A494EE46-C1C0-44E3-87E8-4751FFB824A0.jpeg','assets/821BDE51-4DAA-439B-BD80-F3371A587C2A.png']},
-{name:'Teja animal print',images:['assets/49273B60-4FF0-46E6-B1C5-FC2E32C0369E.png','assets/A6C727DA-6C65-4272-97F6-6318FE8E6E81.png']}],
+{name:'Teja animal print',images:['assets/49273B60-4FF0-46E6-B1C5-FC2E32C0369E.png','assets/A6C727DA-6C65-4272-97F6-6318FE8F6E81.png']}],
 characteristics:['Tela impermeable','Elástico interior','Hecho a mano'] }];
 const i=Math.max(0,Math.min(products.length-1,Number(new URLSearchParams(location.search).get('producto'))||0)),current=products[i];
 const photo=document.getElementById('productPhoto'),select=document.getElementById('fabricSelect'),thumbs=document.getElementById('thumbnails'),imageModal=document.getElementById('imageModal'),modalImage=document.getElementById('modalImage');
@@ -36,13 +36,13 @@ select.innerHTML=current.fabrics.map((x,j)=>'<option value="'+x.name+'" data-ind
 function renderFabricGallery(j){
   const fabric=current.fabrics[j];
   const images=fabric.images||[fabric.image];
-  photo.src=images[0]+'?v=16';
+  photo.src=images[0]+'?v=17';
   photo.alt=current.name+' - '+fabric.name;
-  thumbs.innerHTML=images.map((src,k)=>'<img class="thumb '+(k===0?'active':'')+'" src="'+src+'?v=16" alt="'+fabric.name+' - foto '+(k+1)+'" onclick="selectGalleryImage('+k+')">').join('');
+  thumbs.innerHTML=images.map((src,k)=>'<img class="thumb '+(k===0?'active':'')+'" src="'+src+'?v=17" alt="'+fabric.name+' - foto '+(k+1)+'" onclick="selectGalleryImage('+k+')">').join('');
 }
 function selectGalleryImage(k){
   const images=current.fabrics[select.selectedIndex].images;
-  photo.src=images[k]+'?v=16';
+  photo.src=images[k]+'?v=17';
   photo.alt=current.name+' - '+current.fabrics[select.selectedIndex].name;
   document.querySelectorAll('.thumb').forEach((t,j)=>t.classList.toggle('active',j===k));
 }
