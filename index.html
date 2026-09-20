@@ -38,7 +38,7 @@ section{padding:70px 7%}
 .category-card{display:block;text-decoration:none;color:#2f2926;background:#fff;overflow:hidden;box-shadow:0 7px 24px rgba(70,55,45,.07)}
 .category-card img{width:100%;height:300px;object-fit:contain;display:block;background:#fff;padding:15px}
 .category-card span{display:block;font-family:Georgia,serif;font-size:21px;text-align:center;padding:16px}
-.category-card small{display:block;font-family:Arial,sans-serif;font-size:10px;letter-spacing:2px;color:#9a857a;margin-top:5px;text-transform:uppercase}
+.category-card img{cursor:zoom-in}.home-zoom{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:120;align-items:center;justify-content:center;padding:20px;cursor:zoom-out}.home-zoom.open{display:flex}.home-zoom img{max-width:95vw;max-height:95vh;object-fit:contain}.category-card small{display:block;font-family:Arial,sans-serif;font-size:10px;letter-spacing:2px;color:#9a857a;margin-top:5px;text-transform:uppercase}
 .catalog-button-wrap{text-align:center;margin-top:34px}
 .products{max-width:1100px;margin:70px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .product{background:#fff;overflow:hidden;box-shadow:0 5px 20px rgba(70,55,45,.07)}
@@ -126,10 +126,10 @@ section{padding:52px 18px}.category-grid{grid-template-columns:1fr}.products{gri
 <section id="productos">
   <div class="section-title"><h2>Descubre Mon Impasse</h2><p>Pequeños detalles pensados para acompañarte cada día.</p></div>
   <div class="category-grid home-grid">
-    <a class="category-card" href="Producto.html?producto=0"><img src="assets/8CCC90A3-9263-44CC-BB5F-BB31EAB258DC.png" alt="Bolsa Mon Impasse"><span>Bolsa <small>Ver producto →</small></span></a>
-    <a class="category-card" href="Producto.html?producto=2"><img src="assets/B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png" alt="Neceser Basic Mon Impasse"><span>Neceser Basic <small>Ver producto →</small></span></a>
-    <a class="category-card" href="Producto.html?producto=1"><img src="BDC93116-C83D-40A4-8C72-ABDC236857A1.png" alt="Neceser S Mon Impasse"><span>Neceser S <small>Ver producto →</small></span></a>
-    <a class="category-card" href="Producto.html?producto=3"><img src="0AA88434-7DB8-42AE-A699-75E4C53C092F.png" alt="Baberos Mon Impasse"><span>Baberos <small>Ver producto →</small></span></a>
+    <a class="category-card" href="Producto.html?producto=0"><img src="assets/8CCC90A3-9263-44CC-BB5F-BB31EAB258DC.png" alt="Bolsa Mon Impasse" onclick="openHomeZoom(event,this)"><span>Bolsa <small>Ver producto →</small></span></a>
+    <a class="category-card" href="Producto.html?producto=2"><img src="assets/B4AFE84F-96BF-4DAA-824F-9F6E20F7DC9A.png" alt="Neceser Basic Mon Impasse" onclick="openHomeZoom(event,this)"><span>Neceser Basic <small>Ver producto →</small></span></a>
+    <a class="category-card" href="Producto.html?producto=1"><img src="BDC93116-C83D-40A4-8C72-ABDC236857A1.png" alt="Neceser S Mon Impasse" onclick="openHomeZoom(event,this)"><span>Neceser S <small>Ver producto →</small></span></a>
+    <a class="category-card" href="Producto.html?producto=3"><img src="0AA88434-7DB8-42AE-A699-75E4C53C092F.png" alt="Baberos Mon Impasse" onclick="openHomeZoom(event,this)"><span>Baberos <small>Ver producto →</small></span></a>
   </div>
 </section>
 
@@ -167,5 +167,7 @@ function changeQty(i,n){cart[i].qty+=n;if(cart[i].qty<1)cart.splice(i,1);saveCar
 async function goToCheckout(){if(!cart.length)return;const button=document.querySelector('.checkout');button.disabled=true;button.textContent='Preparando pago…';try{const response=await fetch('/api/create-checkout-session',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({cart})});const data=await response.json();if(!response.ok||!data.url)throw new Error(data.error||'No se pudo iniciar el pago.');window.location.href=data.url}catch(error){alert(error.message||'No se pudo iniciar el pago.');button.disabled=false;button.textContent='Finalizar pedido'}}
 renderProducts();updateCartCount();renderCart();
 </script>
+<div class="home-zoom" id="homeZoom" onclick="closeHomeZoom()"><img id="homeZoomImage" src="" alt=""></div>
+<script>function openHomeZoom(e,img){e.preventDefault();e.stopPropagation();document.getElementById("homeZoomImage").src=img.src;document.getElementById("homeZoom").classList.add("open")}function closeHomeZoom(){document.getElementById("homeZoom").classList.remove("open")}</script>
 </body>
 </html>
