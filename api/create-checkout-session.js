@@ -9,14 +9,21 @@ export default async function handler(req, res) {
 
     const prices = {
       'Totebag sencillo': 25,
+      'Bolsa': 25,
       'Neceser S': 15,
       'Neceser Basic': 20,
       'Babero': 10,
-      'Pack bebé': 50
+      'Pack bebé': 50,
+      'Lanyard': 10
     };
 
-    const valid = cart.filter(item => item && prices[item.name]);
-    if (valid.length !== cart.length) return res.status(400).json({ error: 'Hay un producto no configurado para pago.' });
+    const cleanCart = cart.filter(item => item && prices[item.name]);
+    if (cleanCart.length !== cart.length) return res.status(400).json({ error: 'Hay un producto no configurado para pago.' });
+
+    // Promoción: Totebag/Bolsa + Neceser Basic + Neceser S = Lanyard gratis.
+    const qualifiesForGift = cleanCart.some(x => x.name === 'Bolsa' || x.name === 'Totebag sencillo') && cleanCart.some(x => x.name === 'Neceser Basic') && cleanCart.some(x => x.name === 'Neceser S');
+    const valid = cleanCart.filter(x => !x.promoGift);
+    if (qualifiesForGift) valid.push({ name: 'Lanyard', fabric: 'Lila animal print', qty: 1, promoGift: true });
 
     const origin = req.headers.origin || 'https://monimpasse.com';
     const params = new URLSearchParams();
@@ -30,12 +37,13 @@ export default async function handler(req, res) {
     let subtotal = 0;
     valid.forEach((item, index) => {
       const qty = Math.max(1, Math.min(99, Number(item.qty) || 1));
-      const unitAmount = prices[item.name] * 100;
-      subtotal += prices[item.name] * qty;
+      const isGift = item.promoGift === true;
+      const unitAmount = isGift ? 0 : prices[item.name] * 100;
+      if (!isGift) subtotal += prices[item.name] * qty;
       params.set(`line_items[${index}][price_data][currency]`, 'eur');
       params.set(`line_items[${index}][price_data][unit_amount]`, String(unitAmount));
-      params.set(`line_items[${index}][price_data][product_data][name]`, item.name);
-      const details = [item.fabric, item.personalized ? 'Nombre: ' + item.personalized : ''].filter(Boolean).join(' · ');
+      params.set(`line_items[${index}][price_data][product_data][name]`, item.promoGift ? 'Lanyard de regalo' : item.name);
+      const details = [item.promoGift ? 'Promoción: Totebag + Neceser Basic + Neceser S' : item.fabric, item.personalized ? 'Nombre: ' + item.personalized : ''].filter(Boolean).join(' · ');
       if (details) params.set(`line_items[${index}][price_data][product_data][description]`, details);
       params.set(`line_items[${index}][quantity]`, String(qty));
     });
