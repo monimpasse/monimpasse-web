@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     // Promoción: Totebag/Bolsa + Neceser Basic + Neceser S = Lanyard gratis.
     const qualifiesForGift = cleanCart.some(x => x.name === 'Bolsa' || x.name === 'Totebag sencillo') && cleanCart.some(x => x.name === 'Neceser Basic') && cleanCart.some(x => x.name === 'Neceser S');
     const valid = cleanCart.filter(x => !x.promoGift);
-    if (qualifiesForGift) valid.push({ name: 'Lanyard', fabric: 'Lila animal print', qty: 1, promoGift: true });
+    if (qualifiesForGift) valid.push({ name: 'Lanyard', fabric: (cleanCart.find(x => x.promoGift)?.fabric || 'Color elegido en carrito'), qty: 1, promoGift: true });
 
     const origin = req.headers.origin || 'https://monimpasse.com';
     const params = new URLSearchParams();
