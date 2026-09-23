@@ -100,7 +100,7 @@ export default async function handler(req,res){
       const parsed=parseDescription(description);
       return {
         order_id:order.id,
-        product_name:description.startsWith('Promoción:')?'Lanyard de regalo':(item.price?.product?.name||item.price_data?.product_data?.name||'Producto'),
+        product_name:(item.price?.product && typeof item.price.product==='object' && item.price.product.name)?item.price.product.name:(description.startsWith('Promoción:')?'Lanyard de regalo':(item.price_data?.product_data?.name||'Producto')),
         quantity:Number(item.quantity||1),
         unit_amount:Number(item.price?.unit_amount||0)/100,
         fabric:parsed.fabric,
