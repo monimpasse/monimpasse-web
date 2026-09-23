@@ -94,6 +94,7 @@ export default async function handler(req,res){
     },supabaseUrl,serviceKey);
     const order=orderRows?.[0];
     if(!order)throw new Error('No se pudo crear el pedido.');
+    await supabaseRequest('site_events','POST',{user_id:session.metadata?.user_id||null,session_id:session.id,event_type:'purchase',product_name:null,quantity:lineData.filter(item=>!isShippingItem(item)).reduce((s,item)=>s+Number(item.quantity||1),0),value:total,metadata:{order_number:order.order_number,shipping_amount:shippingAmount}},supabaseUrl,serviceKey);
 
     const items=lineData.filter(item=>!isShippingItem(item)).map(item=>{
       const description=item.description||'';
