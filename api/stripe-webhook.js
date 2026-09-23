@@ -74,7 +74,9 @@ export default async function handler(req,res){
     const shipping=session.shipping_details||{};
     const address=shipping.address||customer.address||null;
     const total=Number(session.amount_total||0)/100;
-    const shippingAmount=Number(session.total_details?.amount_shipping||0)/100;
+    const lineData=lineItems.data||[];
+    const customShippingAmount=lineData.filter(item=>String(item.price?.product?.name||'').startsWith('Envío ')).reduce((sum,item)=>sum+Number(item.amount_total||0)/100,0);
+    const shippingAmount=Number(session.total_details?.amount_shipping||0)/100 || customShippingAmount;
     const orderRows=await supabaseRequest('orders','POST',{
       order_number:makeOrderNumber(),
       user_id:session.metadata?.user_id||null,
@@ -92,7 +94,7 @@ export default async function handler(req,res){
     const order=orderRows?.[0];
     if(!order)throw new Error('No se pudo crear el pedido.');
 
-    const items=(lineItems.data||[]).map(item=>{
+    const items=lineData.filter(item=>!String(item.price?.product?.name||'').startsWith('Envío ')).map(item=>{
       const description=item.description||'';
       const parsed=parseDescription(description);
       return {
