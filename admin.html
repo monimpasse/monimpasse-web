@@ -6,7 +6,7 @@ body{font-family:Arial,sans-serif;background:#faf8f5;color:#292421;margin:0}.wra
 <div class="top"><div><div class="logo">Mon Impasse</div><div class="muted">Panel de administración</div></div><button class="button" onclick="logout()">Cerrar sesión</button></div>
 <div id="app">Comprobando acceso…</div></div>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script>
-const URL='https://pgunvsjrytujpkjbwyaz.supabase.co',KEY='sb_publishable_0rYYngytqQIWsQ2oKL7VsA_MwybRQWA',sb=supabase.createClient(URL,KEY);
+const URL='https://pgunvsjrytujpkjbwyaz.supabase.co',KEY='sb_publishable_0rYYngytqQIWsQ2oKL7VsA_MwybRQWA',sb=window.supabase.createClient(URL,KEY);
 const labels={pending:'Pendiente',paid:'Pagado',preparing:'En preparación',shipped:'Enviado',delivered:'Entregado',cancelled:'Cancelado',refunded:'Reembolsado'};
 function money(n){return Number(n||0).toFixed(2).replace('.',',')+' €'}
 async function init(){const {data:{session}}=await sb.auth.getSession();if(!session){location.href='/?admin=login';return}const {data:isAdmin,error:adminError}=await sb.rpc('is_admin');if(adminError||!isAdmin){document.getElementById('app').innerHTML='<div class="error">No tienes permiso para acceder a este panel.</div>';return}await load()}
