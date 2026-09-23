@@ -4,8 +4,9 @@ export default async function handler(req, res) {
   if (!secretKey) return res.status(500).json({ error: 'Falta configurar STRIPE_SECRET_KEY en Vercel.' });
 
   try {
-    const { cart, userId = null } = req.body || {};
+    const { cart, shippingZone, userId = null } = req.body || {};
     if (!Array.isArray(cart) || !cart.length) return res.status(400).json({ error: 'El carrito está vacío.' });
+    if (!['peninsula','islands'].includes(shippingZone)) return res.status(400).json({ error: 'Selecciona una zona de envío válida.' });
 
     const prices = {'Totebag sencillo':25,'Bolsa':25,'Neceser S':15,'Neceser Basic':20,'Babero':10,'Pack bebé':50,'Lanyard':10};
     const cleanCart = cart.filter(item => item && prices[item.name]);
@@ -54,7 +55,17 @@ export default async function handler(req, res) {
       params.set(`line_items[${index}][quantity]`,String(qty));
     });
 
-    if(subtotal<50) params.set('shipping_options[0][shipping_rate]','shr_1U8iR5AAQ3x48Iizd7mKKegn');
+    const shippingAmount = shippingZone==='peninsula' ? (subtotal>=50 ? 0 : 4.99) : (subtotal>=80 ? 0 : 7.99);
+    const shippingName = shippingZone==='peninsula' ? 'Envío Península' : 'Envío Canarias, Ceuta y Melilla';
+    if (shippingAmount > 0) {
+      const shippingIndex = valid.length;
+      params.set(`line_items[${shippingIndex}][price_data][currency]`,'eur');
+      params.set(`line_items[${shippingIndex}][price_data][unit_amount]`,String(Math.round(shippingAmount*100)));
+      params.set(`line_items[${shippingIndex}][price_data][product_data][name]`,shippingName);
+      params.set(`line_items[${shippingIndex}][price_data][product_data][description]`,shippingName);
+      params.set(`line_items[${shippingIndex}][price_data][product_data][metadata][type]`,'shipping');
+      params.set(`line_items[${shippingIndex}][quantity]`,'1');
+    }
 
     const response=await fetch('https://api.stripe.com/v1/checkout/sessions',{
       method:'POST',
