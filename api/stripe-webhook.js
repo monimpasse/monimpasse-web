@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import webpush from 'web-push';
 
 export const config={api:{bodyParser:false}};
 
@@ -44,6 +45,33 @@ function parseDescription(description=''){
     else if(part.startsWith('Promoción: '))result.promo_gift=true;
   }
   return result;
+}
+
+async function notifyAdmins(order,customerName,total,supabaseUrl,serviceKey){
+  try{
+    const configRows=await supabaseRequest('push_config?select=public_key,private_key&limit=1','GET',undefined,supabaseUrl,serviceKey);
+    const config=configRows?.[0];
+    if(!config?.public_key||!config?.private_key)return;
+    webpush.setVapidDetails('https://monimpasse.com',config.public_key,config.private_key);
+    const admins=await supabaseRequest('admin_users?select=user_id','GET',undefined,supabaseUrl,serviceKey);
+    for(const admin of (admins||[])){
+      const subs=await supabaseRequest('push_subscriptions?select=id,subscription&user_id=eq.'+encodeURIComponent(admin.user_id),'GET',undefined,supabaseUrl,serviceKey);
+      for(const row of (subs||[])){
+        try{
+          await webpush.sendNotification(row.subscription,JSON.stringify({
+            title:'🛍️ Nueva venta en Mon Impasse',
+            body:'Pedido '+order.order_number+' · '+Number(total).toFixed(2).replace('.',',')+' €',
+            url:'/admin.html',
+            tag:'order-'+order.id
+          }));
+        }catch(pushError){
+          if(pushError?.statusCode===404||pushError?.statusCode===410){
+            await supabaseRequest('push_subscriptions?id=eq.'+encodeURIComponent(row.id),'DELETE',undefined,supabaseUrl,serviceKey).catch(()=>{});
+          }else console.error('Push notification error:',pushError);
+        }
+      }
+    }
+  }catch(error){console.error('Admin push error:',error)}
 }
 
 function makeOrderNumber(){
@@ -111,6 +139,7 @@ export default async function handler(req,res){
       };
     });
     if(items.length)await supabaseRequest('order_items','POST',items,supabaseUrl,serviceKey);
+    await notifyAdmins(order,customer.name||shipping.name||'',total,supabaseUrl,serviceKey);
     return res.status(200).json({received:true});
   }catch(error){
     console.error('Stripe webhook error:',error);
