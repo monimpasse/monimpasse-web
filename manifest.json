@@ -1,0 +1,8 @@
+{
+  "name": "Mon Impasse",
+  "short_name": "Mon Impasse",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf8f5",
+  "theme_color": "#c9b2a5"
+}
